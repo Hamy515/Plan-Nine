@@ -502,10 +502,10 @@ body {
    ============================================================ */
 .colour-mark {
   display: block;
-  width: clamp(180px, 22vw, 360px);
+  width: clamp(96px, 9vw, 150px);
   height: auto;
-  filter: drop-shadow(0 0 30px rgba(80,180,255,.18))
-          drop-shadow(0 0 60px rgba(255,80,160,.10));
+  filter: drop-shadow(0 0 20px rgba(80,180,255,.14))
+          drop-shadow(0 0 40px rgba(255,80,160,.08));
   animation: colour-float 9s ease-in-out infinite alternate;
 }
 @keyframes colour-float {
