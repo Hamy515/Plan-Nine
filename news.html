@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News — Plan Nine Pictures</title>
+  <meta name="description" content="Recent festival, premiere and release news from Plan Nine Pictures." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: { extend: {
+        fontFamily: {
+          sans:    ['"Schibsted Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          mono:    ['"Geist Mono"', 'ui-monospace', 'monospace'],
+          display: ['"Schibsted Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          paper:'#000000', ash:'#050505', graphite:'#0a0a0a', steel:'#141414',
+          iron:'#1c1c1c', silver:'#888a90', chalk:'#bdbec3', bone:'#ededed',
+        },
+      }},
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="grain vignette font-sans bg-paper text-bone selection:bg-white selection:text-black">
+
+  <header id="top" class="fixed inset-x-0 top-0 z-40 bg-black/60 backdrop-blur-md border-b border-white/5">
+    <nav class="max-w-[1480px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+      <a href="index.html" class="logo-mark" style="width:36px;height:32px;">
+        <img src="assets/PLANNINE_LOGO_NEW__f8e27c2b.png" alt="Plan Nine Pictures" class="logo-base" />
+        <span class="logo-shine" aria-hidden="true"></span>
+      </a>
+      <ul class="hidden md:flex items-center gap-9 mono text-[11px] uppercase">
+        <li><a class="nav-link" data-nav="work.html"     href="work.html">Work</a></li>
+        <li><a class="nav-link" data-nav="about.html"    href="about.html">About</a></li>
+        <li><a class="nav-link" data-nav="team.html"     href="team.html">Team</a></li>
+        <li><a class="nav-link" data-nav="services.html" href="services.html">Services</a></li>
+        <li><a class="nav-link" data-nav="news.html"     href="news.html">News</a></li>
+        <li><a class="nav-link" data-nav="contact.html"  href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="hidden md:inline-block mono text-[11px] uppercase border-b border-white/30 hover:border-white text-white pb-0.5 transition-colors glow-on-hover">Enquiries</a>
+      <button id="navToggle" class="md:hidden text-bone" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/5 bg-black">
+      <ul class="flex flex-col px-6 py-6 gap-4 mono text-[12px] uppercase">
+        <li><a class="nav-link" data-nav="work.html"     href="work.html">Work</a></li>
+        <li><a class="nav-link" data-nav="about.html"    href="about.html">About</a></li>
+        <li><a class="nav-link" data-nav="team.html"     href="team.html">Team</a></li>
+        <li><a class="nav-link" data-nav="services.html" href="services.html">Services</a></li>
+        <li><a class="nav-link" data-nav="news.html"     href="news.html">News</a></li>
+        <li><a class="nav-link" data-nav="contact.html"  href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="page-fade">
+
+    <section class="page-head">
+      <div class="max-w-[1480px] mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-8">
+        <div class="md:col-span-3">
+          <div class="mono text-[11px] uppercase text-silver">News</div>
+        </div>
+        <div class="md:col-span-9">
+          <h1 class="display text-3xl md:text-5xl text-bone leading-[1.05] font-medium max-w-[20ch]">
+            Latest dispatches.
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+      <div class="max-w-[1480px] mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-3 reveal">
+          <div class="mono text-[11px] uppercase text-silver">2024 — 2026</div>
+        </div>
+        <div class="md:col-span-9">
+          <div class="reveal row news-row">
+            <span class="mono text-[11px] uppercase text-silver">26.04.26</span>
+            <div class="display text-xl md:text-2xl text-bone leading-snug news-title">
+              Largo longlisted for the 2026 Academy Awards® and BAFTAs.
+            </div>
+            <span class="hidden md:block mono text-[11px] uppercase text-silver">Festival</span>
+            <a href="#" class="hidden md:inline mono text-[11px] uppercase text-silver hover:text-white">→</a>
+          </div>
+          <div class="reveal row news-row">
+            <span class="mono text-[11px] uppercase text-silver">14.03.26</span>
+            <div class="display text-xl md:text-2xl text-bone leading-snug news-title">
+              Whim Rules the Child wins Best International Short at Manchester 2026.
+            </div>
+            <span class="hidden md:block mono text-[11px] uppercase text-silver">Award</span>
+            <a href="#" class="hidden md:inline mono text-[11px] uppercase text-silver hover:text-white">→</a>
+          </div>
+          <div class="reveal row news-row">
+            <span class="mono text-[11px] uppercase text-silver">08.10.25</span>
+            <div class="display text-xl md:text-2xl text-bone leading-snug news-title">
+              The Big Breakfast premieres in Midnight X-treme at SITGES.
+            </div>
+            <span class="hidden md:block mono text-[11px] uppercase text-silver">Premiere</span>
+            <a href="#" class="hidden md:inline mono text-[11px] uppercase text-silver hover:text-white">→</a>
+          </div>
+          <div class="reveal row news-row">
+            <span class="mono text-[11px] uppercase text-silver">02.09.24</span>
+            <div class="display text-xl md:text-2xl text-bone leading-snug news-title">
+              A Million Days released by Signature Entertainment.
+            </div>
+            <span class="hidden md:block mono text-[11px] uppercase text-silver">Release</span>
+            <a href="#" class="hidden md:inline mono text-[11px] uppercase text-silver hover:text-white">→</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-black">
+    <div class="max-w-[1480px] mx-auto px-6 lg:px-10 py-14 grid gap-10 md:grid-cols-12 items-start">
+      <div class="md:col-span-5">
+        <a href="index.html" class="logo-mark block mb-5" style="width:44px;aspect-ratio:1500/1349;">
+          <img src="assets/PLANNINE_LOGO_NEW__f8e27c2b.png" alt="Plan Nine Pictures" class="logo-base" />
+          <span class="logo-shine" aria-hidden="true"></span>
+        </a>
+        <p class="text-chalk/65 text-sm max-w-sm leading-relaxed">Independent entertainment company empowering visionary storytellers from around the world.</p>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono text-[10.5px] uppercase text-silver mb-4">Studio</div>
+        <ul class="space-y-2 text-[14px] text-chalk">
+          <li><a href="work.html"     class="hover:text-white transition-colors">Work</a></li>
+          <li><a href="about.html"    class="hover:text-white transition-colors">About</a></li>
+          <li><a href="team.html"     class="hover:text-white transition-colors">Team</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="news.html"     class="hover:text-white transition-colors">News</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-4">
+        <div class="mono text-[10.5px] uppercase text-silver mb-4">Connect</div>
+        <ul class="space-y-2 text-[14px] text-chalk">
+          <li><a href="mailto:hello@planninepictures.com" class="hover:text-white transition-colors">hello@planninepictures.com</a></li>
+          <li><a href="https://www.instagram.com/planninepictures/" target="_blank" rel="noopener" class="hover:text-white transition-colors">Instagram</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Vimeo</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-[1480px] mx-auto px-6 lg:px-10 py-5 mono text-[10.5px] uppercase text-silver flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span>© 2026 Plan Nine Pictures Ltd.</span>
+        <span>Registered in England &amp; Wales</span>
+        <span>All rights reserved</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

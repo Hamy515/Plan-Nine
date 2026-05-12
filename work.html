@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Work — Plan Nine Pictures</title>
+  <meta name="description" content="Selected filmography from Plan Nine Pictures — features, shorts and animation across 2024–2026." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: { extend: {
+        fontFamily: {
+          sans:    ['"Schibsted Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          mono:    ['"Geist Mono"', 'ui-monospace', 'monospace'],
+          display: ['"Schibsted Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          paper:'#000000', ash:'#050505', graphite:'#0a0a0a', steel:'#141414',
+          iron:'#1c1c1c', silver:'#888a90', chalk:'#bdbec3', bone:'#ededed',
+        },
+      }},
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="grain vignette font-sans bg-paper text-bone selection:bg-white selection:text-black">
+
+  <!-- Laurel symbol (used by .laurel components below) -->
+  <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <symbol id="laurel-half" viewBox="0 0 50 100">
+        <g fill="currentColor" stroke="currentColor" stroke-width=".7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M44 96 C 30 80, 22 56, 18 14" fill="none" />
+          <ellipse cx="40" cy="84" rx="5"   ry="2"   transform="rotate(40 40 84)"/>
+          <ellipse cx="34" cy="70" rx="5.5" ry="2.1" transform="rotate(30 34 70)"/>
+          <ellipse cx="28" cy="56" rx="6"   ry="2.2" transform="rotate(20 28 56)"/>
+          <ellipse cx="23" cy="40" rx="6"   ry="2.2" transform="rotate(10 23 40)"/>
+          <ellipse cx="19" cy="24" rx="5"   ry="2"   transform="rotate(-2 19 24)"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ============================ NAV ============================ -->
+  <header id="top" class="fixed inset-x-0 top-0 z-40 bg-black/60 backdrop-blur-md border-b border-white/5">
+    <nav class="max-w-[1480px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+      <a href="index.html" class="logo-mark" style="width:36px;height:32px;">
+        <img src="assets/PLANNINE_LOGO_NEW__f8e27c2b.png" alt="Plan Nine Pictures" class="logo-base" />
+        <span class="logo-shine" aria-hidden="true"></span>
+      </a>
+      <ul class="hidden md:flex items-center gap-9 mono text-[11px] uppercase">
+        <li><a class="nav-link" data-nav="work.html"     href="work.html">Work</a></li>
+        <li><a class="nav-link" data-nav="about.html"    href="about.html">About</a></li>
+        <li><a class="nav-link" data-nav="team.html"     href="team.html">Team</a></li>
+        <li><a class="nav-link" data-nav="services.html" href="services.html">Services</a></li>
+        <li><a class="nav-link" data-nav="news.html"     href="news.html">News</a></li>
+        <li><a class="nav-link" data-nav="contact.html"  href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="hidden md:inline-block mono text-[11px] uppercase border-b border-white/30 hover:border-white text-white pb-0.5 transition-colors glow-on-hover">Enquiries</a>
+      <button id="navToggle" class="md:hidden text-bone" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/5 bg-black">
+      <ul class="flex flex-col px-6 py-6 gap-4 mono text-[12px] uppercase">
+        <li><a class="nav-link" data-nav="work.html"     href="work.html">Work</a></li>
+        <li><a class="nav-link" data-nav="about.html"    href="about.html">About</a></li>
+        <li><a class="nav-link" data-nav="team.html"     href="team.html">Team</a></li>
+        <li><a class="nav-link" data-nav="services.html" href="services.html">Services</a></li>
+        <li><a class="nav-link" data-nav="news.html"     href="news.html">News</a></li>
+        <li><a class="nav-link" data-nav="contact.html"  href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="page-fade">
+
+    <!-- ===== TRAILER CAROUSEL (hero) ===== -->
+    <section class="hero min-h-[100svh] flex flex-col">
+
+      <div class="hero-bg" aria-hidden="true">
+        <div class="plate" id="wkPlate"></div>
+        <iframe
+          id="wkTrailer"
+          title="Trailer (silent backplate)"
+          allow="autoplay; fullscreen; picture-in-picture"
+          loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+
+      <!-- Floating side-arrow navigation -->
+      <button class="hero-side-nav prev" id="wkPrevBtn" aria-label="Previous trailer">
+        <span aria-hidden="true">←</span>
+      </button>
+      <button class="hero-side-nav next" id="wkNextBtn" aria-label="Next trailer">
+        <span aria-hidden="true">→</span>
+      </button>
+
+      <div class="hero-content flex flex-col flex-1">
+        <div class="absolute top-16 inset-x-0 px-6 lg:px-10 pt-6 mono text-[10.5px] uppercase text-chalk/65 flex items-center justify-between pointer-events-none z-10">
+          <span class="blink">The Slate · Trailers</span>
+          <span class="hidden sm:block">2024 — 2026</span>
+          <span><span id="wkFilmCounter">01 / 04</span></span>
+        </div>
+
+        <div class="flex-1 flex items-end">
+          <div class="w-full max-w-[1480px] mx-auto px-6 lg:px-10 pt-32 pb-20 grid lg:grid-cols-12 gap-10">
+            <div class="lg:col-span-8 slide-meta" id="wkFilmText">
+              <div class="mono text-[11px] uppercase text-chalk/70 mb-5">Now showing</div>
+              <h1 class="display text-5xl md:text-7xl lg:text-[6.5rem] text-bone leading-[0.95] font-medium" id="wkFilmTitle">Largo</h1>
+              <p class="mt-6 text-chalk/85 max-w-md text-base md:text-lg leading-relaxed" id="wkFilmDesc">
+                After struggling to adapt to life in the UK without his parents, a ten-year-old
+                Syrian refugee attempts to build a boat and sail home to find them.
+              </p>
+            </div>
+
+            <div class="lg:col-span-3 lg:col-start-10 self-end">
+              <a id="wkFilmLink" href="https://vimeo.com/1028598931" target="_blank" rel="noopener"
+                 class="watch-pill mono text-[11px] uppercase text-white">
+                <span class="play-dot" aria-hidden="true"></span>
+                Watch trailer
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a href="#slate" class="block mt-5 mono text-[11px] uppercase text-chalk/70 hover:text-white transition-colors">
+                View full slate ↓
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- bottom: meta strip -->
+        <div class="border-t border-white/10 px-6 lg:px-10 py-4">
+          <div class="max-w-[1480px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <div class="slide-meta flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-5 mono text-[10.5px] uppercase text-chalk/65" id="wkSlideMeta">
+              <span><span id="wkFilmType">Narrative Short</span></span>
+              <span><span id="wkFilmYear">2024</span></span>
+              <span><span id="wkFilmDir">dir. Burgoyne-Moore / Scarpa</span></span>
+            </div>
+            <span class="mono text-[10.5px] uppercase text-chalk/45 hidden sm:inline">← / → to navigate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE HEAD -->
+    <section class="page-head">
+      <div class="max-w-[1480px] mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-8">
+        <div class="md:col-span-5">
+          <div class="mono text-[11px] uppercase text-silver mb-4">The Slate / 2024–2026</div>
+          <h2 class="display text-3xl md:text-5xl text-bone leading-[1.02] font-medium">
+            Selected filmography.
+          </h2>
+        </div>
+        <p class="md:col-span-5 md:col-start-8 text-chalk/85 text-base md:text-lg leading-relaxed self-end max-w-md">
+          Six titles in active circulation — features, shorts and animation — from
+          Academy Award®-longlisted work to projects in development.
+        </p>
+      </div>
+    </section>
+
+    <!-- THE SLATE -->
+    <section id="slate" class="relative py-20 md:py-28">
+      <div class="max-w-[1480px] mx-auto px-6 lg:px-10 space-y-20 md:space-y-28">
+
+        <!-- 01 — LARGO -->
+        <article class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+          <div class="md:col-span-7 frame aspect-[2.39/1]">
+            <img src="assets/LargoStills_4.1.16.png" alt="Largo (still)" />
+          </div>
+          <div class="md:col-span-5 flex flex-col gap-7">
+            <div>
+              <div class="mono text-[11px] uppercase text-silver mb-3 flex items-center gap-4">
+                <span>N° 01</span><span class="block w-8 h-px bg-white/40"></span><span>Narrative Short · 2024</span>
+              </div>
+              <h3 class="display text-2xl md:text-3xl lg:text-4xl text-bone font-medium leading-[1.02] glow-on-hover mb-4">Largo</h3>
+              <p class="text-chalk/85 leading-relaxed text-[15px] max-w-prose">
+                After struggling to adapt to life in the UK without his parents, a ten-year-old
+                Syrian refugee attempts to build a boat and sail home to find them.
+              </p>
+            </div>
+            <dl class="rule pt-4 space-y-2 mono text-[11px] uppercase">
+              <div class="flex justify-between gap-6"><dt class="text-silver">Status</dt><dd>Released</dd></div>
+              <div class="flex justify-between gap-6"><dt class="text-silver">Director</dt><dd>Burgoyne-Moore / Scarpa</dd></div>
+              <div class="flex justify-between gap-6"><dt class="text-silver">Cast</dt><dd>Tamsin Greig · Kevin McNally</dd></div>
+            </dl>
+          </div>
+          <div class="md:col-span-12 rule-soft pt-6 md:pt-7">
+            <div class="mono text-[10.5px] uppercase text-silver mb-5">Festival Run</div>
+            <div class="laurels">
+              <figure class="laurel">
+                <svg class="l-leaf l-left"  viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
+                <figcaption>
+                  <span class="l-eyebrow">Longlisted</span>
+                  <span class="l-title">Academy Award®</span>
+                  <span class="l-meta">2026</span>
+                </figcaption>
+                <svg class="l-leaf l-right" viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
+              </figure>
+              <figure class="laurel">
+                <svg class="l-leaf l-left"  viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
+                <figcaption>
+                  <span class="l-eyebrow">Winner</span>
+                  <span class="l-title">Best Cinematography</span>
+                  <span class="l-meta">Manchester</span>
+                </figcaption>
+                <svg class="l-leaf l-right" viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
+              </figure>
+              <figure class="laurel laurel--img">
+                <img src="assets/HS21_Official_Selection_White__1_.png" alt="HollyShorts — Official Selection" />
+              </figure>
+              <figure class="laurel laurel--img laurel--sq">
+                <img src="assets/OfficialLaurels_LAShorts_2025_White.png" alt="LA Shorts — Official Selection 2025" />
+              </figure>
+              <figure class="laurel">
+                <svg class="l-leaf l-left"  viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
+                <figcaption>
+                  <span class="l-eyebrow">Winner</span>
+                  <span class="l-title">Best Global Short</span>
+                  <span class="l-meta">SCAD Savannah</span>
+                </figcaption>
+                <svg class="l-leaf l-right" viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
+              </figure>
+              <figure class="laurel">
+                <svg class="l-leaf l-left"  viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
+                <figcaption>
+                  <span class="l-eyebrow">World Premiere</span>
+                  <span class="l-title">Indy Shorts</span>
+                  <span class="l-meta">Indianapolis</span>
+                </figcaption>
+                <svg class="l-leaf l-right" viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 — A MILLION DAYS -->
+        <article class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+          <div class="md:col-span-7 frame aspect-[2.39/1]">
+            <img src="assets/Copy_of_A_MILLION-DAYS_WIDESCREEN.jpg" alt="A Million Days (still)" />
+          </div>
+          <div class="md:col-span-5 flex flex-col gap-7">
+            <div>
+              <div class="mono text-[11px] uppercase text-silver mb-3 flex items-center gap-4">
+                <span>N° 02</span><span class="block w-8 h-px bg-white/40"></span><span>Narrative Feature · 2024</span>
+              </div>
+              <h3 class="display text-2xl md:text-3xl lg:text-4xl text-bone font-medium leading-[1.02] glow-on-hover mb-4">A Million Days</h3>
+              <p class="text-chalk/85 leading-relaxed text-[15px] max-w-prose">
+                2041. On the eve of humanity&rsquo;s first lunar colony, an AI&rsquo;s chilling motives
+                begin to splinter the team meant to launch it — the night&rsquo;s decisions will
+                change humanity forever.
+              </p>
+            </div>
+            <dl class="rule pt-4 space-y-2 mono text-[11px] uppercase">
+              <div class="flex justify-between gap-6"><dt class="text-silver">Status</dt><dd>Released</dd></div>
+              <div class="flex justify-between gap-6"><dt class="text-silver">Director</dt><dd>Mitch Jenkins</dd></div>
+              <div class="flex justify-between gap-6"><dt class="text-silver">Distribution</dt><dd>Signature Entertainment</dd></div>
+            </dl>
+          </div>
+          <div class="md:col-span-12 rule-soft pt-6 md:pt-7">
+            <div class="mono text-[10.5px] uppercase text-silver mb-5">Festival Run</div>
+            <div class="laurels">
+              <figure class="laurel">
+                <svg class="l-leaf l-left"  viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
+                <figcaption>
+                  <span class="l-eyebrow">Official Selection</span>
+                  <span class="l-title">FrightFest</span>
+                  <span class="l-meta">London</span>
+                </figcaption>
+                <svg class="l-leaf l-right" viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
+              </figure>
+              <figure class="laurel laurel--img">
+                <img src="assets/Laurel%20Official%20Selection%202023_White.png" alt="Trieste Science+Fiction Festival — Official Selection 2023" />
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 — WHIM RULES THE CHILD -->
+        <article class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+          <div class="md:col-span-7 frame aspect-[2.39/1]">
+            <img src="assets/WhimRulesTheChild.jpg" alt="Whim Rules the Child (still)" style="object-position: 50% 100%;" />
+          </div>
+          <div class="md:col-span-5 flex flex-col gap-7">
+            <div>
+              <div class="mono text-[11px] uppercase text-silver mb-3 flex items-center gap-4">
+                <span>N° 03</span><span class="block w-8 h-px bg-white/40"></span><span>Narrative Short · 2024</span>
+              </div>
+              <h3 class="display text-2xl md:text-3xl lg:text-4xl text-bone font-medium leading-[1.02] glow-on-hover mb-4">Whim Rules the Child,<br/>and Weather the Field</h3>
+              <p class="text-chalk/85 leading-relaxed text-[15px] max-w-prose">
+                In a near-future Iceland, an older woman refuses to abandon her coastal home as the
+                sea levels rise. Her son tries to convince her to move to the city for her safety.
+              </p>
+            </div>
+            <dl class="rule pt-4 space-y-2 mono text-[11px] uppercase">
+              <div class="flex justify-between gap-6"><dt class="text-silver">Status</dt><dd>Released</dd></div>
+              <div class="flex justify-between gap-6"><dt class="text-silver">Director</dt><dd>Katla Sólnes</dd></div>
+              <div class="flex justify-between gap-6"><dt class="text-silver">Cast</dt><dd>Edda Björgvinsdóttir</dd></div>
+            </dl>
+          </div>
+          <div class="md:col-span-12 rule-soft pt-6 md:pt-7">
+            <div class="mono text-[10.5px] uppercase text-silver mb-5">Festival Run</div>
+            <div class="laurels">
+              <figure class="laurel laurel--img">
+                <img src="assets/Manchester.international%20Short.png" alt="Manchester — Best International Short" />
+              </figure>
+              <figure class="laurel">
+                <svg class="l-leaf l-left"  viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
+                <figcaption>
+                  <span class="l-eyebrow">Oscar-Qualifying</span>
+                  <span class="l-title">Official Selection</span>
+                  <span class="l-meta">Short Shorts · Tokyo</span>
+                </figcaption>
+                <svg class="l-leaf l-right" viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 — THE BIG BREAKFAST -->
+        <article class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+          <div class="md:col-span-7 frame aspect-[2.39/1]">
+            <img src="assets/Sequence_01.00_00_35_19.Still013.jpg" alt="The Big Breakfast (still)" />
+          </div>
+          <div class="md:col-span-5 flex flex-col gap-7">
+            <div>
+              <div class="mono text-[11px] uppercase text-silver mb-3 flex items-center gap-4">
+                <span>N° 04</span><span class="block w-8 h-px bg-white/40"></span><span>Narrative Short · 2025</span>
+              </div>
+              <h3 class="display text-2xl md:text-3xl lg:text-4xl text-bone font-medium leading-[1.02] glow-on-hover mb-4">The Big Breakfast</h3>
+              <p class="text-chalk/85 leading-relaxed text-[15px] max-w-prose">
+                A surreal comedy short set in a 1960s London greasy spoon — a night of drinking
+                spills into what might become the capital&rsquo;s biggest ever breakfast, scored to
+                the tropical cadences of Hawaiian music.
+              </p>
+            </div>
+            <dl class="rule pt-4 space-y-2 mono text-[11px] uppercase">
+              <div class="flex justify-between gap-6"><dt class="text-silver">Status</dt><dd>Released</dd></div>
+              <div class="flex justify-between gap-6"><dt class="text-silver">Director</dt><dd>Chris Hyde</dd></div>
+              <div class="flex justify-between gap-6"><dt class="text-silver">Cast</dt><dd>Charlie Bateman · David Schaal</dd></div>
+            </dl>
+          </div>
+          <div class="md:col-span-12 rule-soft pt-6 md:pt-7">
+            <div class="mono text-[10.5px] uppercase text-silver mb-5">Festival Run</div>
+            <div class="laurels">
+              <figure class="laurel laurel--img">
+                <img src="assets/MIDNIGHT-X-TREME_OFFICIAL_SELECTION_SITGES_2025.png" alt="Sitges — Midnight X-treme · Official Selection 2025" />
+              </figure>
+              <figure class="laurel laurel--img laurel--sm">
+                <img src="assets/ASFF25_Offical_Selection_Laurels_WHT.png" alt="Aesthetica Short Film Festival — Official Selection 2025" />
+              </figure>
+              <figure class="laurel laurel--img">
+                <img src="assets/KIFF_Laurel_-_OFFICIAL_SELECTION_1_.png" alt="KIFF — Official Selection" />
+              </figure>
+              <figure class="laurel laurel--img laurel--sq">
+                <img src="assets/NFF25_Laurel_White_1_.png" alt="NFF 2025 — Official Selection" />
+              </figure>
+              <figure class="laurel laurel--img laurel--xl">
+                <img src="assets/26_Landshut_Short_Film_Festival_Official_Selection_white.png" alt="Landshut Short Film Festival — Official Selection 2026" />
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 — PUSHING DAISY -->
+        <article class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+          <div class="md:col-span-7 frame aspect-[2.39/1]">
+            <img src="assets/Still_2025-11-20_152612_1.4.8.jpg" alt="Pushing Daisy (still)" />
+          </div>
+          <div class="md:col-span-5 flex flex-col gap-7">
+            <div>
+              <div class="mono text-[11px] uppercase text-silver mb-3 flex items-center gap-4">
+                <span>N° 05</span><span class="block w-8 h-px bg-white/40"></span><span>Short &amp; Series</span>
+              </div>
+              <h3 class="display text-2xl md:text-3xl lg:text-4xl text-bone font-medium leading-[1.02] glow-on-hover mb-4">Pushing Daisy</h3>
+              <p class="text-chalk/85 leading-relaxed text-[15px] max-w-prose">
+                A narrative short and series, currently in finishing.
+              </p>
+            </div>
+            <dl class="rule pt-4 space-y-2 mono text-[11px] uppercase">
+              <div class="flex justify-between gap-6"><dt class="text-silver">Status</dt><dd>Post-Production</dd></div>
+            </dl>
+            <div class="rule-soft pt-4">
+              <div class="mono text-[10.5px] uppercase text-silver mb-3">Coming</div>
+              <p class="text-chalk/80 text-[14px] leading-snug">Festival announcement <span class="text-silver">— forthcoming</span></p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 06 — CHRONICLES -->
+        <article class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+          <div class="md:col-span-7 frame aspect-[2.39/1]">
+            <img src="assets/ChronICLES_Poster.jpg" alt="Chronicles of the Inhabited Worlds (key art)" />
+          </div>
+          <div class="md:col-span-5 flex flex-col gap-7">
+            <div>
+              <div class="mono text-[11px] uppercase text-silver mb-3 flex items-center gap-4">
+                <span>N° 06</span><span class="block w-8 h-px bg-white/40"></span><span>Anime Series &amp; Game</span>
+              </div>
+              <h3 class="display text-2xl md:text-3xl lg:text-4xl text-bone font-medium leading-[1.02] glow-on-hover mb-2">Chronicles of the<br/>Inhabited Worlds</h3>
+              <div class="mono text-[12px] text-silver mb-4">万界クロニカル</div>
+              <p class="text-chalk/85 leading-relaxed text-[15px] max-w-prose">
+                A space-opera anime series and companion video game, co-produced with
+                Echelle Animation. From the founders of Crunchyroll, blending 2D and 3D
+                animation across a galactic-scale story.
+              </p>
+            </div>
+            <dl class="rule pt-4 space-y-2 mono text-[11px] uppercase">
+              <div class="flex justify-between gap-6"><dt class="text-silver">Status</dt><dd>Development</dd></div>
+              <div class="flex justify-between gap-6"><dt class="text-silver">Series Director</dt><dd>Max Maleo</dd></div>
+              <div class="flex justify-between gap-6"><dt class="text-silver">Game Creative Dir.</dt><dd>Thierry Perreau</dd></div>
+            </dl>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="border-t border-white/10 bg-black">
+    <div class="max-w-[1480px] mx-auto px-6 lg:px-10 py-14 grid gap-10 md:grid-cols-12 items-start">
+      <div class="md:col-span-5">
+        <a href="index.html" class="logo-mark block mb-5" style="width:44px;aspect-ratio:1500/1349;">
+          <img src="assets/PLANNINE_LOGO_NEW__f8e27c2b.png" alt="Plan Nine Pictures" class="logo-base" />
+          <span class="logo-shine" aria-hidden="true"></span>
+        </a>
+        <p class="text-chalk/65 text-sm max-w-sm leading-relaxed">Independent entertainment company empowering visionary storytellers from around the world.</p>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono text-[10.5px] uppercase text-silver mb-4">Studio</div>
+        <ul class="space-y-2 text-[14px] text-chalk">
+          <li><a href="work.html"     class="hover:text-white transition-colors">Work</a></li>
+          <li><a href="about.html"    class="hover:text-white transition-colors">About</a></li>
+          <li><a href="team.html"     class="hover:text-white transition-colors">Team</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="news.html"     class="hover:text-white transition-colors">News</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-4">
+        <div class="mono text-[10.5px] uppercase text-silver mb-4">Connect</div>
+        <ul class="space-y-2 text-[14px] text-chalk">
+          <li><a href="mailto:hello@planninepictures.com" class="hover:text-white transition-colors">hello@planninepictures.com</a></li>
+          <li><a href="https://www.instagram.com/planninepictures/" target="_blank" rel="noopener" class="hover:text-white transition-colors">Instagram</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Vimeo</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-[1480px] mx-auto px-6 lg:px-10 py-5 mono text-[10.5px] uppercase text-silver flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span>© 2026 Plan Nine Pictures Ltd.</span>
+        <span>Registered in England &amp; Wales</span>
+        <span>All rights reserved</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+  <script>
+    // ===== Trailer carousel =====
+    const slides = [
+      { vimeoId: "1028598931", title: "Largo",                year: "2024", dir: "Burgoyne-Moore / Scarpa", type: "Narrative Short",   url: "https://vimeo.com/1028598931", still: "LargoStills_4.1.16.png",
+        desc: "After struggling to adapt to life in the UK without his parents, a ten-year-old Syrian refugee attempts to build a boat and sail home to find them." },
+      { vimeoId: "1191491926", title: "A Million Days",       year: "2024", dir: "Mitch Jenkins",           type: "Narrative Feature", url: "https://vimeo.com/1191491926", still: "IMG_2486.JPG",
+        desc: "2041. On the eve of humanity's first lunar colony, an AI's chilling motives begin to splinter the team meant to launch it." },
+      { vimeoId: "997760313",  title: "Whim Rules the Child", year: "2024", dir: "Katla Sólnes",            type: "Narrative Short",   url: "https://vimeo.com/997760313",  still: "WhimRulesTheChild.jpg",
+        desc: "In a near-future Iceland, an older woman refuses to abandon her coastal home as the sea levels rise around her." },
+      { vimeoId: "1191500024", title: "The Big Breakfast",    year: "2025", dir: "Chris Hyde",              type: "Narrative Short",   url: "https://vimeo.com/1191500024", still: "Sequence_01.00_00_35_19.Still013.jpg",
+        desc: "A surreal comedy short set in a 1960s London greasy spoon — scored to the tropical cadences of Hawaiian music." },
+    ];
+
+    const trailerEl = document.getElementById('wkTrailer');
+    const plateEl   = document.getElementById('wkPlate');
+    const filmText  = document.getElementById('wkFilmText');
+    const slideMeta = document.getElementById('wkSlideMeta');
+    const counter   = document.getElementById('wkFilmCounter');
+    const titleEl   = document.getElementById('wkFilmTitle');
+    const descEl    = document.getElementById('wkFilmDesc');
+    const yearEl    = document.getElementById('wkFilmYear');
+    const dirEl     = document.getElementById('wkFilmDir');
+    const typeEl    = document.getElementById('wkFilmType');
+    const linkEl    = document.getElementById('wkFilmLink');
+
+    let cur = 0;
+
+    function vimeoSrc(id) {
+      return `https://player.vimeo.com/video/${id}?background=1&autoplay=1&loop=1&muted=1&autopause=0&controls=0&title=0&byline=0&portrait=0&dnt=1&quality=1080p`;
+    }
+
+    function show(i) {
+      cur = (i + slides.length) % slides.length;
+      const s = slides[cur];
+
+      filmText.classList.add('fading');
+      slideMeta.classList.add('fading');
+
+      setTimeout(() => {
+        plateEl.style.backgroundImage = 'none';
+        if (s.vimeoId) {
+          trailerEl.src = vimeoSrc(s.vimeoId);
+          trailerEl.style.opacity = '1';
+        } else {
+          trailerEl.src = '';
+          trailerEl.style.opacity = '0';
+        }
+
+        const total = String(slides.length).padStart(2, '0');
+        counter.textContent = String(cur + 1).padStart(2, '0') + ' / ' + total;
+        titleEl.textContent = s.title;
+        descEl.textContent  = s.desc;
+        yearEl.textContent  = s.year;
+        dirEl.textContent   = 'dir. ' + s.dir;
+        typeEl.textContent  = s.type;
+
+        if (s.url) {
+          linkEl.href = s.url;
+          linkEl.style.opacity = '1';
+          linkEl.style.pointerEvents = 'auto';
+          linkEl.querySelector('span:nth-child(2)') && (linkEl.childNodes[2].textContent = ' Watch trailer ');
+        } else {
+          linkEl.href = '#';
+          linkEl.style.opacity = '.35';
+          linkEl.style.pointerEvents = 'none';
+        }
+
+        filmText.classList.remove('fading');
+        slideMeta.classList.remove('fading');
+      }, 280);
+    }
+
+    document.getElementById('wkPrevBtn').addEventListener('click', () => show(cur - 1));
+    document.getElementById('wkNextBtn').addEventListener('click', () => show(cur + 1));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft')  show(cur - 1);
+      if (e.key === 'ArrowRight') show(cur + 1);
+    });
+
+    show(0);
+  </script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Plan Nine Pictures</title>
+  <meta name="description" content="Plan Nine Pictures is a UK-based independent entertainment company empowering visionary storytellers from around the world." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: { extend: {
+        fontFamily: {
+          sans:    ['"Schibsted Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          mono:    ['"Geist Mono"', 'ui-monospace', 'monospace'],
+          display: ['"Schibsted Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          paper:'#000000', ash:'#050505', graphite:'#0a0a0a', steel:'#141414',
+          iron:'#1c1c1c', silver:'#888a90', chalk:'#bdbec3', bone:'#ededed',
+        },
+      }},
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="grain vignette font-sans bg-paper text-bone selection:bg-white selection:text-black">
+
+  <header id="top" class="fixed inset-x-0 top-0 z-40 bg-black/60 backdrop-blur-md border-b border-white/5">
+    <nav class="max-w-[1480px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+      <a href="index.html" class="logo-mark" style="width:36px;height:32px;">
+        <img src="assets/PLANNINE_LOGO_NEW__f8e27c2b.png" alt="Plan Nine Pictures" class="logo-base" />
+        <span class="logo-shine" aria-hidden="true"></span>
+      </a>
+      <ul class="hidden md:flex items-center gap-9 mono text-[11px] uppercase">
+        <li><a class="nav-link" data-nav="work.html"     href="work.html">Work</a></li>
+        <li><a class="nav-link" data-nav="about.html"    href="about.html">About</a></li>
+        <li><a class="nav-link" data-nav="team.html"     href="team.html">Team</a></li>
+        <li><a class="nav-link" data-nav="services.html" href="services.html">Services</a></li>
+        <li><a class="nav-link" data-nav="news.html"     href="news.html">News</a></li>
+        <li><a class="nav-link" data-nav="contact.html"  href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="hidden md:inline-block mono text-[11px] uppercase border-b border-white/30 hover:border-white text-white pb-0.5 transition-colors glow-on-hover">Enquiries</a>
+      <button id="navToggle" class="md:hidden text-bone" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/5 bg-black">
+      <ul class="flex flex-col px-6 py-6 gap-4 mono text-[12px] uppercase">
+        <li><a class="nav-link" data-nav="work.html"     href="work.html">Work</a></li>
+        <li><a class="nav-link" data-nav="about.html"    href="about.html">About</a></li>
+        <li><a class="nav-link" data-nav="team.html"     href="team.html">Team</a></li>
+        <li><a class="nav-link" data-nav="services.html" href="services.html">Services</a></li>
+        <li><a class="nav-link" data-nav="news.html"     href="news.html">News</a></li>
+        <li><a class="nav-link" data-nav="contact.html"  href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="page-fade">
+
+    <section class="page-head pt-32 md:pt-40 pb-16 md:pb-24 overflow-hidden">
+      <div class="max-w-[1480px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-10 items-center">
+
+        <div class="lg:col-span-7">
+          <img src="assets/PlanNineLogoAboutPage.png"
+               alt="Plan Nine — colour wordmark"
+               class="colour-mark"
+               draggable="false" />
+
+          <div class="mt-7 mono text-[11px] uppercase tracking-[0.35em] text-chalk/70">
+            Plan&nbsp;·&nbsp;Nine&nbsp;·&nbsp;Pictures
+          </div>
+
+          <p class="display text-2xl md:text-3xl lg:text-4xl text-bone leading-[1.15] mt-6 max-w-[22ch] font-normal">
+            A UK-based independent entertainment company whose mission is
+            to <span class="text-white">empower visionary storytellers from around the world.</span>
+          </p>
+        </div>
+
+        <div class="lg:col-span-4 lg:col-start-9 lg:pl-8 lg:border-l lg:border-white/10">
+          <div class="mono text-[11px] uppercase text-silver mb-3">About</div>
+          <p class="text-chalk/85 text-[15px] leading-relaxed max-w-xs">
+            Founded in 2019 by Chris Hamilton and Charles Meunier — developing,
+            producing and co-producing film, animation and interactive work across the globe.
+          </p>
+          <a href="team.html" class="inline-block mt-7 mono text-[11px] uppercase text-white border-b border-white pb-0.5 glow-on-hover">
+            Meet the team →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="py-20 md:py-28">
+      <div class="max-w-[1480px] mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-3 reveal">
+          <div class="mono text-[11px] uppercase text-silver">At a glance</div>
+        </div>
+        <div class="md:col-span-9 reveal">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-10 max-w-4xl">
+            <div>
+              <div class="mono text-[10.5px] uppercase text-silver mb-2">Founded</div>
+              <div class="display text-3xl text-bone">2019</div>
+            </div>
+            <div>
+              <div class="mono text-[10.5px] uppercase text-silver mb-2">Based</div>
+              <div class="display text-3xl text-bone">London, UK</div>
+            </div>
+            <div>
+              <div class="mono text-[10.5px] uppercase text-silver mb-2">Founders</div>
+              <div class="display text-3xl text-bone leading-tight">Hamilton<br/>&amp; Meunier</div>
+            </div>
+            <div>
+              <div class="mono text-[10.5px] uppercase text-silver mb-2">Instagram</div>
+              <a href="https://www.instagram.com/planninepictures/" target="_blank" rel="noopener"
+                 class="display text-2xl md:text-3xl text-bone glow-on-hover inline-flex items-baseline gap-2 leading-tight">
+                @planninepictures
+                <span aria-hidden="true" class="text-silver text-base">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 md:py-28 border-t border-white/10">
+      <div class="max-w-[1480px] mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-3 reveal">
+          <div class="mono text-[11px] uppercase text-silver">Studio</div>
+        </div>
+        <div class="md:col-span-9 reveal space-y-6 text-chalk/85 leading-relaxed text-base md:text-[17px] max-w-3xl">
+          <p>
+            Plan Nine was founded in 2019 by Chris Hamilton and Charles Meunier with the goal of
+            backing distinct voices and giving them the structure to do their best work.
+          </p>
+          <p>
+            We develop, produce and co-produce films, animation and interactive work — from
+            festival-circuit shorts and feature debuts to international anime co-productions
+            and video games.
+          </p>
+          <p>
+            From the start the company has worked across borders. We&rsquo;re set up to co-produce
+            internationally, leveraging the financial incentives and funding available in the UK
+            alongside our partners&rsquo; networks abroad.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ ON INSTAGRAM ============================ -->
+    <section class="py-20 md:py-28 border-t border-white/10">
+      <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+        <div class="grid md:grid-cols-12 gap-8 mb-10 md:mb-14 items-end reveal">
+          <div class="md:col-span-3">
+            <div class="mono text-[11px] uppercase text-silver">On Instagram</div>
+          </div>
+          <div class="md:col-span-6">
+            <h2 class="display text-2xl md:text-3xl text-bone font-medium leading-tight">
+              Behind the scenes — recent posts.
+            </h2>
+          </div>
+          <div class="md:col-span-3 md:text-right">
+            <a href="https://www.instagram.com/planninepictures/" target="_blank" rel="noopener"
+               class="mono text-[11px] uppercase text-white border-b border-white pb-0.5 glow-on-hover inline-block">
+              Follow @planninepictures →
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+          <div class="ig-embed">
+            <iframe src="https://www.instagram.com/p/DXmua2eDLuS/embed/captioned/" loading="lazy" scrolling="no" allowtransparency="true" title="Plan Nine Pictures on Instagram"></iframe>
+          </div>
+          <div class="ig-embed">
+            <iframe src="https://www.instagram.com/p/DXCDiIxDSkh/embed/captioned/" loading="lazy" scrolling="no" allowtransparency="true" title="Plan Nine Pictures on Instagram"></iframe>
+          </div>
+          <div class="ig-embed">
+            <iframe src="https://www.instagram.com/p/DW6N8xWCK_q/embed/captioned/" loading="lazy" scrolling="no" allowtransparency="true" title="Plan Nine Pictures on Instagram"></iframe>
+          </div>
+          <div class="ig-embed">
+            <iframe src="https://www.instagram.com/p/DT-qDe_CLyV/embed/captioned/" loading="lazy" scrolling="no" allowtransparency="true" title="Plan Nine Pictures on Instagram"></iframe>
+          </div>
+          <div class="ig-embed">
+            <iframe src="https://www.instagram.com/p/DSGAa8hCMKH/embed/captioned/" loading="lazy" scrolling="no" allowtransparency="true" title="Plan Nine Pictures on Instagram"></iframe>
+          </div>
+          <div class="ig-embed">
+            <iframe src="https://www.instagram.com/p/DOyTcwWjJR0/embed/captioned/" loading="lazy" scrolling="no" allowtransparency="true" title="Plan Nine Pictures on Instagram"></iframe>
+          </div>
+          <div class="ig-embed">
+            <iframe src="https://www.instagram.com/p/DPujvd-jIqW/embed/captioned/" loading="lazy" scrolling="no" allowtransparency="true" title="Plan Nine Pictures on Instagram"></iframe>
+          </div>
+          <div class="ig-embed">
+            <iframe src="https://www.instagram.com/p/C8t3mkCik62/embed/captioned/" loading="lazy" scrolling="no" allowtransparency="true" title="Plan Nine Pictures on Instagram"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ NEXT: TEAM ============================ -->
+    <section class="py-20 md:py-28 border-t border-white/10">
+      <div class="max-w-[1480px] mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-10 items-end">
+        <div class="md:col-span-7">
+          <div class="mono text-[11px] uppercase text-silver mb-4">Next</div>
+          <h2 class="display text-3xl md:text-5xl text-bone font-medium leading-[1.02]">
+            Meet the team.
+          </h2>
+        </div>
+        <div class="md:col-span-5 text-right">
+          <a href="team.html" class="mono text-[11px] uppercase text-white border-b border-white pb-0.5 glow-on-hover">
+            Read team bios →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-black">
+    <div class="max-w-[1480px] mx-auto px-6 lg:px-10 py-14 grid gap-10 md:grid-cols-12 items-start">
+      <div class="md:col-span-5">
+        <a href="index.html" class="logo-mark block mb-5" style="width:44px;aspect-ratio:1500/1349;">
+          <img src="assets/PLANNINE_LOGO_NEW__f8e27c2b.png" alt="Plan Nine Pictures" class="logo-base" />
+          <span class="logo-shine" aria-hidden="true"></span>
+        </a>
+        <p class="text-chalk/65 text-sm max-w-sm leading-relaxed">Independent entertainment company empowering visionary storytellers from around the world.</p>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono text-[10.5px] uppercase text-silver mb-4">Studio</div>
+        <ul class="space-y-2 text-[14px] text-chalk">
+          <li><a href="work.html"     class="hover:text-white transition-colors">Work</a></li>
+          <li><a href="about.html"    class="hover:text-white transition-colors">About</a></li>
+          <li><a href="team.html"     class="hover:text-white transition-colors">Team</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="news.html"     class="hover:text-white transition-colors">News</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-4">
+        <div class="mono text-[10.5px] uppercase text-silver mb-4">Connect</div>
+        <ul class="space-y-2 text-[14px] text-chalk">
+          <li><a href="mailto:hello@planninepictures.com" class="hover:text-white transition-colors">hello@planninepictures.com</a></li>
+          <li><a href="https://www.instagram.com/planninepictures/" target="_blank" rel="noopener" class="hover:text-white transition-colors">Instagram</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Vimeo</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-[1480px] mx-auto px-6 lg:px-10 py-5 mono text-[10.5px] uppercase text-silver flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span>© 2026 Plan Nine Pictures Ltd.</span>
+        <span>Registered in England &amp; Wales</span>
+        <span>All rights reserved</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

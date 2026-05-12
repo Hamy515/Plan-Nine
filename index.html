@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plan Nine Pictures</title>
+  <meta name="description" content="A UK-based independent entertainment company empowering visionary storytellers from around the world." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: { extend: {
+        fontFamily: {
+          sans:    ['"Schibsted Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          mono:    ['"Geist Mono"', 'ui-monospace', 'monospace'],
+          display: ['"Schibsted Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          paper:'#000000', ash:'#050505', graphite:'#0a0a0a', steel:'#141414',
+          iron:'#1c1c1c', silver:'#888a90', chalk:'#bdbec3', bone:'#ededed',
+        },
+      }},
+    };
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="grain vignette font-sans bg-paper text-bone selection:bg-white selection:text-black">
+
+  <!-- ============================ NAV ============================ -->
+  <header id="top" class="fixed inset-x-0 top-0 z-40 bg-black/60 backdrop-blur-md border-b border-white/5">
+    <nav class="max-w-[1480px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+      <a href="index.html" class="logo-mark" style="width:36px;height:32px;">
+        <img src="assets/PLANNINE_LOGO_NEW__f8e27c2b.png" alt="Plan Nine Pictures" class="logo-base" />
+        <span class="logo-shine" aria-hidden="true"></span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-9 mono text-[11px] uppercase">
+        <li><a class="nav-link" data-nav="work.html"     href="work.html">Work</a></li>
+        <li><a class="nav-link" data-nav="about.html"    href="about.html">About</a></li>
+        <li><a class="nav-link" data-nav="team.html"     href="team.html">Team</a></li>
+        <li><a class="nav-link" data-nav="services.html" href="services.html">Services</a></li>
+        <li><a class="nav-link" data-nav="news.html"     href="news.html">News</a></li>
+        <li><a class="nav-link" data-nav="contact.html"  href="contact.html">Contact</a></li>
+      </ul>
+
+      <a href="contact.html" class="hidden md:inline-block mono text-[11px] uppercase border-b border-white/30 hover:border-white text-white pb-0.5 transition-colors glow-on-hover">
+        Enquiries
+      </a>
+
+      <button id="navToggle" class="md:hidden text-bone" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M3 7h18M3 12h18M3 17h18"/>
+        </svg>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/5 bg-black">
+      <ul class="flex flex-col px-6 py-6 gap-4 mono text-[12px] uppercase">
+        <li><a class="nav-link" data-nav="work.html"     href="work.html">Work</a></li>
+        <li><a class="nav-link" data-nav="about.html"    href="about.html">About</a></li>
+        <li><a class="nav-link" data-nav="team.html"     href="team.html">Team</a></li>
+        <li><a class="nav-link" data-nav="services.html" href="services.html">Services</a></li>
+        <li><a class="nav-link" data-nav="news.html"     href="news.html">News</a></li>
+        <li><a class="nav-link" data-nav="contact.html"  href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ============================ HERO + CAROUSEL ============================ -->
+  <section class="hero min-h-[100svh] flex flex-col page-fade">
+
+    <div class="hero-bg" aria-hidden="true">
+      <div class="plate" id="homePlate" style="background:#000;"></div>
+      <iframe
+        id="homeTrailer"
+        title="Trailer (silent backplate)"
+        src="https://player.vimeo.com/video/1028598931?background=1&autoplay=1&loop=1&muted=1&autopause=0&controls=0&title=0&byline=0&portrait=0&dnt=1&quality=1080p"
+        allow="autoplay; fullscreen; picture-in-picture"
+        loading="eager"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    </div>
+
+    <div class="hero-content flex flex-col flex-1">
+      <div class="absolute top-16 inset-x-0 px-6 lg:px-10 pt-6 mono text-[10.5px] uppercase text-chalk/65 flex items-center justify-between pointer-events-none z-10">
+        <span class="blink">EST · MMXIX</span>
+        <span class="hidden sm:block">London · United Kingdom</span>
+        <span>N° 0001</span>
+      </div>
+
+      <div class="flex-1 flex items-center">
+        <div class="w-full max-w-[1480px] mx-auto px-6 lg:px-10 pt-32 pb-32 grid lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7">
+            <a href="index.html" class="logo-mark ambient-breathe block" style="width:clamp(48px, 5vw, 76px); aspect-ratio: 1500/1349;">
+              <img src="assets/PLANNINE_LOGO_NEW__f8e27c2b.png" alt="Plan Nine Pictures" class="logo-base" />
+              <span class="logo-shine" aria-hidden="true"></span>
+            </a>
+
+            <div class="mt-8 mono text-[11px] uppercase tracking-[0.35em] text-chalk/70">
+              Plan&nbsp;·&nbsp;Nine&nbsp;·&nbsp;Pictures
+            </div>
+
+            <p class="display text-2xl md:text-3xl lg:text-4xl text-bone leading-[1.1] mt-7 max-w-[20ch] font-medium">
+              Independent entertainment.<br/>
+              <span class="text-chalk font-normal">Visionary storytellers.</span>
+            </p>
+          </div>
+
+          <div class="lg:col-span-4 lg:col-start-9 lg:pl-8 lg:border-l lg:border-white/10">
+            <p class="text-chalk/85 text-[15px] leading-relaxed max-w-xs">
+              A UK-based independent company developing, producing and co-producing
+              film, animation and interactive work — backing distinct voices on a global stage.
+            </p>
+
+            <div class="mt-8 flex flex-wrap items-center gap-5">
+              <a id="homeWatchPill" href="https://vimeo.com/1028598931" target="_blank" rel="noopener"
+                 class="watch-pill mono text-[11px] uppercase text-white">
+                <span class="play-dot" aria-hidden="true"></span>
+                <span id="homeWatchLabel">Watch · Largo trailer</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a href="work.html" class="mono text-[11px] uppercase text-white border-b border-white pb-0.5 glow-on-hover">
+                View the slate
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Now showing credit ===== -->
+      <div class="border-t border-white/10 px-6 lg:px-10 py-4">
+        <div class="max-w-[1480px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mono text-[10.5px] uppercase text-chalk/65">
+          <span id="homeNowShowing">Now showing · <span class="text-white">Largo</span> (2024) · dir. Burgoyne-Moore / Scarpa</span>
+          <a href="work.html" class="hidden sm:inline text-chalk/85 hover:text-white transition-colors">
+            Browse all trailers →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="border-t border-white/10 bg-black">
+    <div class="max-w-[1480px] mx-auto px-6 lg:px-10 py-14 grid gap-10 md:grid-cols-12 items-start">
+      <div class="md:col-span-5">
+        <a href="index.html" class="logo-mark block mb-5" style="width:44px;aspect-ratio:1500/1349;">
+          <img src="assets/PLANNINE_LOGO_NEW__f8e27c2b.png" alt="Plan Nine Pictures" class="logo-base" />
+          <span class="logo-shine" aria-hidden="true"></span>
+        </a>
+        <p class="text-chalk/65 text-sm max-w-sm leading-relaxed">
+          Independent entertainment company empowering visionary storytellers from around the world.
+        </p>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono text-[10.5px] uppercase text-silver mb-4">Studio</div>
+        <ul class="space-y-2 text-[14px] text-chalk">
+          <li><a href="work.html"     class="hover:text-white transition-colors">Work</a></li>
+          <li><a href="about.html"    class="hover:text-white transition-colors">About</a></li>
+          <li><a href="team.html"     class="hover:text-white transition-colors">Team</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="news.html"     class="hover:text-white transition-colors">News</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-4">
+        <div class="mono text-[10.5px] uppercase text-silver mb-4">Connect</div>
+        <ul class="space-y-2 text-[14px] text-chalk">
+          <li><a href="mailto:hello@planninepictures.com" class="hover:text-white transition-colors">hello@planninepictures.com</a></li>
+          <li><a href="https://www.instagram.com/planninepictures/" target="_blank" rel="noopener" class="hover:text-white transition-colors">Instagram</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Vimeo</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-[1480px] mx-auto px-6 lg:px-10 py-5 mono text-[10.5px] uppercase text-silver flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span>© 2026 Plan Nine Pictures Ltd.</span>
+        <span>Registered in England &amp; Wales</span>
+        <span>All rights reserved</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+  <script>
+    // ===== Home hero — auto-cycling trailer mashup =====
+    (function () {
+      const slides = [
+        { id: "1028598931", title: "Largo",                year: "2024", dir: "Burgoyne-Moore / Scarpa", poster: "LargoStills_4.1.16.png" },
+        { id: "1191491926", title: "A Million Days",       year: "2024", dir: "Mitch Jenkins",           poster: "IMG_2486.JPG" },
+        { id: "997760313",  title: "Whim Rules the Child", year: "2024", dir: "Katla Sólnes",            poster: "WhimRulesTheChild.jpg" },
+        { id: "1191500024", title: "The Big Breakfast",    year: "2025", dir: "Chris Hyde",              poster: "Sequence_01.00_00_35_19.Still013.jpg" },
+      ];
+
+      const iframe     = document.getElementById('homeTrailer');
+      const plate      = document.getElementById('homePlate');
+      const nowShowing = document.getElementById('homeNowShowing');
+      const watchPill  = document.getElementById('homeWatchPill');
+      const watchLabel = document.getElementById('homeWatchLabel');
+      if (!iframe) return;
+
+      const vimeoSrc = (id) =>
+        `https://player.vimeo.com/video/${id}?background=1&autoplay=1&loop=1&muted=1&autopause=0&controls=0&title=0&byline=0&portrait=0&dnt=1&quality=1080p`;
+
+      let cur = 0;
+      let timer;
+
+      function show(i) {
+        cur = (i + slides.length) % slides.length;
+        const s = slides[cur];
+
+        iframe.style.opacity = '0';
+        plate.style.opacity  = '0';
+
+        setTimeout(() => {
+          iframe.src = vimeoSrc(s.id);
+          plate.style.opacity  = '1';
+          iframe.style.opacity = '1';
+
+          if (nowShowing) {
+            nowShowing.innerHTML =
+              `Now showing · <span class="text-white">${s.title}</span> (${s.year}) · dir. ${s.dir}`;
+          }
+          if (watchPill)  watchPill.href = `https://vimeo.com/${s.id}`;
+          if (watchLabel) watchLabel.textContent = `Watch · ${s.title} trailer`;
+        }, 700);
+      }
+
+      function start() { timer = setInterval(() => show(cur + 1), 12000); }
+      function stop()  { clearInterval(timer); }
+
+      show(0);
+      start();
+
+      // Pause cycling when tab is hidden to save bandwidth, resume on return.
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop(); else start();
+      });
+    })();
+  </script>
+</body>
+</html>
