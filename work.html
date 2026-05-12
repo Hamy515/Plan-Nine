@@ -105,16 +105,9 @@
       </button>
 
       <div class="hero-content flex flex-col flex-1">
-        <div class="absolute top-16 inset-x-0 px-6 lg:px-10 pt-6 mono text-[10.5px] uppercase text-chalk/65 flex items-center justify-between pointer-events-none z-10">
-          <span class="blink">Projects · Trailers</span>
-          <span class="hidden sm:block">2024 — 2026</span>
-          <span><span id="wkFilmCounter">01 / 04</span></span>
-        </div>
-
         <div class="flex-1 flex items-end">
           <div class="w-full max-w-[1480px] mx-auto px-6 lg:px-10 pt-32 pb-20 grid lg:grid-cols-12 gap-10">
             <div class="lg:col-span-8 slide-meta" id="wkFilmText">
-              <div class="mono text-[11px] uppercase text-chalk/70 mb-5">Now showing</div>
               <h1 class="display text-5xl md:text-7xl lg:text-[6.5rem] text-bone leading-[0.95] font-medium" id="wkFilmTitle">Largo</h1>
               <p class="mt-6 text-chalk/85 max-w-md text-base md:text-lg leading-relaxed" id="wkFilmDesc">
                 After struggling to adapt to life in the UK without his parents, a ten-year-old
@@ -144,7 +137,6 @@
               <span><span id="wkFilmYear">2024</span></span>
               <span><span id="wkFilmDir">dir. Burgoyne-Moore / Scarpa</span></span>
             </div>
-            <span class="mono text-[10.5px] uppercase text-chalk/45 hidden sm:inline">← / → to navigate</span>
           </div>
         </div>
       </div>
@@ -154,7 +146,6 @@
     <section class="page-head">
       <div class="max-w-[1480px] mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-8">
         <div class="md:col-span-5">
-          <div class="mono text-[11px] uppercase text-silver mb-4">Projects / 2024–2026</div>
           <h2 class="display text-3xl md:text-5xl text-bone leading-[1.02] font-medium">
             Selected filmography.
           </h2>
@@ -193,7 +184,6 @@
             </dl>
           </div>
           <div class="md:col-span-12 rule-soft pt-6 md:pt-7">
-            <div class="mono text-[10.5px] uppercase text-silver mb-5">Festival Run</div>
             <div class="laurels">
               <figure class="laurel">
                 <svg class="l-leaf l-left"  viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
@@ -265,7 +255,6 @@
             </dl>
           </div>
           <div class="md:col-span-12 rule-soft pt-6 md:pt-7">
-            <div class="mono text-[10.5px] uppercase text-silver mb-5">Festival Run</div>
             <div class="laurels">
               <figure class="laurel">
                 <svg class="l-leaf l-left"  viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
@@ -306,7 +295,6 @@
             </dl>
           </div>
           <div class="md:col-span-12 rule-soft pt-6 md:pt-7">
-            <div class="mono text-[10.5px] uppercase text-silver mb-5">Festival Run</div>
             <div class="laurels">
               <figure class="laurel laurel--img">
                 <img src="assets/Manchester.international%20Short.png" alt="Manchester — Best International Short" />
@@ -348,7 +336,6 @@
             </dl>
           </div>
           <div class="md:col-span-12 rule-soft pt-6 md:pt-7">
-            <div class="mono text-[10.5px] uppercase text-silver mb-5">Festival Run</div>
             <div class="laurels">
               <figure class="laurel laurel--img">
                 <img src="assets/MIDNIGHT-X-TREME_OFFICIAL_SELECTION_SITGES_2025.png" alt="Sitges — Midnight X-treme · Official Selection 2025" />
@@ -388,7 +375,6 @@
               <div class="flex justify-between gap-6"><dt class="text-silver">Status</dt><dd>Post-Production</dd></div>
             </dl>
             <div class="rule-soft pt-4">
-              <div class="mono text-[10.5px] uppercase text-silver mb-3">Coming</div>
               <p class="text-chalk/80 text-[14px] leading-snug">Festival announcement <span class="text-silver">— forthcoming</span></p>
             </div>
           </div>
@@ -512,8 +498,10 @@
           trailerEl.style.opacity = '0';
         }
 
-        const total = String(slides.length).padStart(2, '0');
-        counter.textContent = String(cur + 1).padStart(2, '0') + ' / ' + total;
+        if (counter) {
+          const total = String(slides.length).padStart(2, '0');
+          counter.textContent = String(cur + 1).padStart(2, '0') + ' / ' + total;
+        }
         titleEl.textContent = s.title;
         descEl.textContent  = s.desc;
         yearEl.textContent  = s.year;
