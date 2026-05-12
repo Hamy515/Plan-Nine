@@ -502,7 +502,7 @@ body {
    ============================================================ */
 .colour-mark {
   display: block;
-  width: clamp(110px, 13vw, 200px);
+  width: clamp(180px, 22vw, 360px);
   height: auto;
   filter: drop-shadow(0 0 30px rgba(80,180,255,.18))
           drop-shadow(0 0 60px rgba(255,80,160,.10));
