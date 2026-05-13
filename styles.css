@@ -406,6 +406,14 @@ body {
 .laurel.laurel--sm img { transform: scale(0.88); }
 .laurel.laurel--img.laurel--sm:hover img { transform: scale(0.92); }
 
+/* Black-on-white laurel PNGs: invert so they read light on the dark page. */
+.laurel.laurel--img.laurel--invert img {
+  filter: invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, .12));
+}
+.laurel.laurel--img.laurel--invert:hover img {
+  filter: invert(1) drop-shadow(0 0 16px rgba(255, 255, 255, .28));
+}
+
 /* 2-column laurel grid — used in narrow side columns on /work */
 .laurels.laurels-2col {
   display: grid;
