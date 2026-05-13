@@ -514,26 +514,34 @@ body {
 }
 
 /* ============================================================
-   INSTAGRAM EMBED — live post iframes
+   INSTAGRAM EMBED — live post iframes (dark / wireframe treatment)
+   ----
+   Instagram serves these from instagram.com on a fixed white card.
+   We can't restyle the iframe internals, so we apply an invert +
+   hue-rotate filter: white chrome flips to near-black while photo
+   colours stay roughly intact. The wrapper adds a thin hairline
+   frame to anchor the cards into the dark page.
    ============================================================ */
 .ig-embed {
   position: relative;
   width: 100%;
-  background: #fff;
+  background: #0a0a0a;
   overflow: hidden;
   border-radius: 2px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.06);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 12px 40px rgba(0,0,0,.5);
   transition: transform .6s cubic-bezier(.2,.7,.2,1), box-shadow .6s ease;
 }
 .ig-embed:hover {
   transform: translateY(-4px);
-  box-shadow: 0 22px 60px rgba(0,0,0,.65), 0 0 0 1px rgba(255,255,255,.18);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.18), 0 22px 60px rgba(0,0,0,.65);
 }
 .ig-embed iframe {
   width: 100%;
   height: 660px;
   border: 0;
   display: block;
+  filter: invert(0.92) hue-rotate(180deg) saturate(1.05);
+  background: #0a0a0a;
 }
 @media (min-width: 768px) {
   .ig-embed iframe { height: 600px; }
