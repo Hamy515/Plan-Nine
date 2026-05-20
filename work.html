@@ -131,11 +131,19 @@
 
         <!-- bottom: meta strip -->
         <div class="border-t border-white/10 px-6 lg:px-10 py-4">
-          <div class="max-w-[1480px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-            <div class="slide-meta flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-5 mono text-[10.5px] uppercase text-chalk/65" id="wkSlideMeta">
+          <div class="max-w-[1480px] mx-auto flex flex-row items-center justify-between gap-3">
+            <div class="slide-meta flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-5 mono text-[10.5px] uppercase text-chalk/65 min-w-0" id="wkSlideMeta">
               <span><span id="wkFilmType">Narrative Short</span></span>
               <span><span id="wkFilmYear">2024</span></span>
               <span><span id="wkFilmDir">dir. Burgoyne-Moore / Scarpa</span></span>
+            </div>
+            <div class="flex items-center gap-2 md:hidden shrink-0">
+              <button id="wkPrevBtnMobile" class="hero-nav-mini" aria-label="Previous trailer">
+                <span aria-hidden="true">←</span>
+              </button>
+              <button id="wkNextBtnMobile" class="hero-nav-mini" aria-label="Next trailer">
+                <span aria-hidden="true">→</span>
+              </button>
             </div>
           </div>
         </div>
@@ -529,8 +537,10 @@
       }, 280);
     }
 
-    document.getElementById('wkPrevBtn').addEventListener('click', () => show(cur - 1));
-    document.getElementById('wkNextBtn').addEventListener('click', () => show(cur + 1));
+    [document.getElementById('wkPrevBtn'), document.getElementById('wkPrevBtnMobile')]
+      .forEach(b => b && b.addEventListener('click', () => show(cur - 1)));
+    [document.getElementById('wkNextBtn'), document.getElementById('wkNextBtnMobile')]
+      .forEach(b => b && b.addEventListener('click', () => show(cur + 1)));
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft')  show(cur - 1);
