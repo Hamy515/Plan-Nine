@@ -224,6 +224,14 @@ body {
   .hero-side-nav.next { right: 3rem; }
 }
 
+/* Long carousel titles (e.g. "Whim Rules the Child") need a smaller scale
+   so they don't wrap onto two lines inside the 8-col title block. */
+#wkFilmTitle.wkFilmTitle--long {
+  font-size: clamp(2rem, 6.5vw, 5rem);
+  line-height: 0.96;
+  white-space: nowrap;
+}
+
 /* Mobile-only mini arrows in the carousel meta strip */
 .hero-nav-mini {
   width: 40px; height: 40px;

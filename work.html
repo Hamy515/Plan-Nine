@@ -268,14 +268,8 @@
           </div>
           <div class="md:col-span-12 rule-soft pt-6 md:pt-7">
             <div class="laurels">
-              <figure class="laurel">
-                <svg class="l-leaf l-left"  viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
-                <figcaption>
-                  <span class="l-eyebrow">Official Selection</span>
-                  <span class="l-title">FrightFest</span>
-                  <span class="l-meta">London</span>
-                </figcaption>
-                <svg class="l-leaf l-right" viewBox="0 0 50 100" aria-hidden="true"><use href="#laurel-half"/></svg>
+              <figure class="laurel laurel--img">
+                <img src="assets/Frightfest-2023-Laurel-min-e1692790209288.png" alt="FrightFest 2023 · Official Selection" />
               </figure>
               <figure class="laurel laurel--img">
                 <img src="assets/Laurel%20Official%20Selection%202023_White.png" alt="Trieste Science+Fiction Festival · Official Selection 2023" />
@@ -517,6 +511,7 @@
           counter.textContent = String(cur + 1).padStart(2, '0') + ' / ' + total;
         }
         titleEl.textContent = s.title;
+        titleEl.classList.toggle('wkFilmTitle--long', s.title.length > 18);
         descEl.textContent  = s.desc;
         yearEl.textContent  = s.year;
         dirEl.textContent   = 'dir. ' + s.dir;
