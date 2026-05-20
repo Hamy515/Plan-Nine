@@ -191,21 +191,22 @@ body {
 .slide-meta { transition: opacity .35s ease; }
 .slide-meta.fading { opacity: 0; }
 
-/* Floating side-arrow nav (carousel) */
+/* Floating side-arrow nav (carousel) — sits in the upper portion of the
+   hero so the trailer title/description has room beneath it. */
 .hero-side-nav {
   position: absolute;
-  top: 50%;
+  top: 36%;
   transform: translateY(-50%);
   z-index: 5;
-  width: 52px; height: 52px;
-  display: inline-flex; align-items: center; justify-content: center;
+  width: 60px; height: 60px;
+  align-items: center; justify-content: center;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.22);
   background: rgba(0,0,0,.4);
   backdrop-filter: blur(10px);
   color: #fff;
   font-family: "Geist Mono", monospace;
-  font-size: 20px; line-height: 1;
+  font-size: 22px; line-height: 1;
   cursor: pointer;
   transition: border-color .4s ease, background .4s ease, box-shadow .5s ease, transform .35s cubic-bezier(.2,.7,.2,1);
 }
@@ -214,15 +215,10 @@ body {
   background: rgba(255,255,255,.08);
   box-shadow: 0 0 28px rgba(255,255,255,.18);
 }
-.hero-side-nav.prev { left: 1rem; }
-.hero-side-nav.next { right: 1rem; }
+.hero-side-nav.prev { left: 2rem; }
+.hero-side-nav.next { right: 2rem; }
 .hero-side-nav.prev:hover { transform: translateY(-50%) translateX(-3px); }
 .hero-side-nav.next:hover { transform: translateY(-50%) translateX(3px); }
-@media (min-width: 768px) {
-  .hero-side-nav { width: 60px; height: 60px; font-size: 22px; }
-  .hero-side-nav.prev { left: 2rem; }
-  .hero-side-nav.next { right: 2rem; }
-}
 @media (min-width: 1280px) {
   .hero-side-nav.prev { left: 3rem; }
   .hero-side-nav.next { right: 3rem; }
