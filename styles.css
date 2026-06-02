@@ -439,8 +439,8 @@ body {
 
 /* Manchester Film Festival bee — small mark in a large canvas, scale a
    touch so it's visible without dominating. */
-.laurel.laurel--img.laurel--maniff img { transform: scale(1.6); }
-.laurel.laurel--img.laurel--maniff:hover img { transform: scale(1.66); }
+.laurel.laurel--img.laurel--maniff img { transform: scale(1.15); }
+.laurel.laurel--img.laurel--maniff:hover img { transform: scale(1.2); }
 
 /* Oscars longlist laurel — image + caption stacked inside the standard
    laurel box so it reads at the same scale as everything else. */
