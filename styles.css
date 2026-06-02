@@ -437,6 +437,67 @@ body {
   filter: invert(1) drop-shadow(0 0 16px rgba(255, 255, 255, .28));
 }
 
+/* Manchester Film Festival bee — small visible mark in a large canvas.
+   Scale the contained image up so the bee reads. */
+.laurel.laurel--img.laurel--maniff img { transform: scale(2.4); }
+.laurel.laurel--img.laurel--maniff:hover img { transform: scale(2.5); }
+
+/* Featured longlist callout — sits above the laurel grid on Largo
+   so the Oscars longlist reads as the headline credit. */
+.longlist-callout {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 36px);
+  padding: 1.5rem clamp(1.25rem, 2.5vw, 2rem);
+  margin-bottom: 1.75rem;
+  border: 1px solid rgba(232, 214, 166, .28);
+  background:
+    linear-gradient(135deg, rgba(232, 214, 166, .06), rgba(232, 214, 166, .015) 60%, transparent),
+    rgba(0, 0, 0, .25);
+  border-radius: 2px;
+}
+.longlist-callout__logo {
+  flex: 0 0 auto;
+  width: clamp(120px, 18vw, 220px);
+  height: auto;
+  filter: drop-shadow(0 0 18px rgba(232, 214, 166, .25));
+}
+.longlist-callout__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.longlist-callout__eyebrow {
+  font-family: "Geist Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: #e8d6a6;
+  opacity: .85;
+  line-height: 1;
+}
+.longlist-callout__title {
+  font-family: "Schibsted Grotesk", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: .01em;
+  color: #ededed;
+  line-height: 1.02;
+  text-transform: uppercase;
+}
+.longlist-callout__meta {
+  font-family: "Geist Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #bdbec3;
+  margin-top: 2px;
+}
+@media (max-width: 640px) {
+  .longlist-callout { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.25rem; }
+}
+
 /* 2-column laurel grid — used in narrow side columns on /work */
 .laurels.laurels-2col {
   display: grid;
