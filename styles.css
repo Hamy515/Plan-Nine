@@ -442,6 +442,51 @@ body {
 .laurel.laurel--img.laurel--maniff img { transform: scale(1.15); }
 .laurel.laurel--img.laurel--maniff:hover img { transform: scale(1.2); }
 
+/* Streaming partner mark (Amazon Prime). The Prime logo is a colored
+   wordmark so it sits on a small white card to read against the dark
+   page. The eyebrow + arrow flank it as part of the same link. */
+.prime-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.prime-link__eyebrow {
+  font-family: "Geist Mono", monospace;
+  font-size: 10.5px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #888a90;
+  transition: color .3s ease;
+}
+.prime-link__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  background: #ffffff;
+  border-radius: 3px;
+  transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .5s ease;
+}
+.prime-link__badge img {
+  height: 20px;
+  width: auto;
+  display: block;
+}
+.prime-link__arrow {
+  font-family: "Geist Mono", monospace;
+  font-size: 11px;
+  color: #888a90;
+  transition: color .3s ease, transform .3s cubic-bezier(.2,.7,.2,1);
+}
+.prime-link:hover .prime-link__badge {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 165, 255, .22);
+}
+.prime-link:hover .prime-link__eyebrow,
+.prime-link:hover .prime-link__arrow { color: #fff; }
+.prime-link:hover .prime-link__arrow { transform: translate(2px, -2px); }
+
 /* Oscars longlist laurel — image + caption stacked inside the standard
    laurel box so it reads at the same scale as everything else. */
 .laurel.laurel--oscars {
