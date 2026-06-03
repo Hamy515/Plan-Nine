@@ -122,6 +122,15 @@
                 Watch trailer
                 <span aria-hidden="true">↗</span>
               </a>
+              <a id="wkPrimeLink" href="#" target="_blank" rel="noopener"
+                 class="prime-link hidden mt-5"
+                 aria-label="Watch on Amazon Prime">
+                <span class="prime-link__eyebrow">Also on</span>
+                <span class="prime-link__badge">
+                  <img src="assets/Amazon_Prime-Logo.wine.png" alt="Amazon Prime" />
+                </span>
+                <span aria-hidden="true" class="prime-link__arrow">↗</span>
+              </a>
               <a href="#projects" class="block mt-5 mono text-[11px] uppercase text-chalk/70 hover:text-white transition-colors">
                 View projects ↓
               </a>
@@ -493,6 +502,7 @@
       { vimeoId: "1028598931", title: "Largo",                year: "2024", dir: "Burgoyne-Moore / Scarpa", type: "Narrative Short",   url: "https://vimeo.com/1028598931", still: "LargoStills_4.1.16.png",
         desc: "After struggling to adapt to life in the UK without his parents, a ten-year-old Syrian refugee attempts to build a boat and sail home to find them." },
       { vimeoId: "1191491926", title: "A Million Days",       year: "2024", dir: "Mitch Jenkins",           type: "Narrative Feature", url: "https://vimeo.com/1191491926", still: "IMG_2486.JPG",
+        primeUrl: "https://www.amazon.com/Million-Days-Mitch-Jenkins/dp/B0D6G6LL1Y",
         desc: "2041. On the eve of humanity's first lunar colony, an AI's chilling motives begin to splinter the team meant to launch it." },
       { vimeoId: "997760313",  title: "Whim Rules the Child", year: "2024", dir: "Katla Sólnes",            type: "Narrative Short",   url: "https://vimeo.com/997760313",  still: "WhimRulesTheChild.jpg",
         desc: "In a near-future Iceland, an older woman refuses to abandon her coastal home as the sea levels rise around her." },
@@ -511,6 +521,7 @@
     const dirEl     = document.getElementById('wkFilmDir');
     const typeEl    = document.getElementById('wkFilmType');
     const linkEl    = document.getElementById('wkFilmLink');
+    const primeLink = document.getElementById('wkPrimeLink');
 
     let cur = 0;
 
@@ -555,6 +566,15 @@
           linkEl.href = '#';
           linkEl.style.opacity = '.35';
           linkEl.style.pointerEvents = 'none';
+        }
+
+        if (primeLink) {
+          if (s.primeUrl) {
+            primeLink.href = s.primeUrl;
+            primeLink.classList.remove('hidden');
+          } else {
+            primeLink.classList.add('hidden');
+          }
         }
 
         filmText.classList.remove('fading');

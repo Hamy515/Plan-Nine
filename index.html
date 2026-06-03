@@ -119,12 +119,21 @@
               film, animation and interactive work, backing distinct voices on a global stage.
             </p>
 
-            <div class="mt-8 flex flex-wrap items-center gap-5">
+            <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-4">
               <a id="homeWatchPill" href="https://vimeo.com/1028598931" target="_blank" rel="noopener"
                  class="watch-pill mono text-[11px] uppercase text-white">
                 <span class="play-dot" aria-hidden="true"></span>
                 <span id="homeWatchLabel">Watch · Largo trailer</span>
                 <span aria-hidden="true">↗</span>
+              </a>
+              <a id="homePrimeLink" href="#" target="_blank" rel="noopener"
+                 class="prime-link hidden"
+                 aria-label="Watch on Amazon Prime">
+                <span class="prime-link__eyebrow">Also on</span>
+                <span class="prime-link__badge">
+                  <img src="assets/Amazon_Prime-Logo.wine.png" alt="Amazon Prime" />
+                </span>
+                <span aria-hidden="true" class="prime-link__arrow">↗</span>
               </a>
               <a href="work.html" class="mono text-[11px] uppercase text-white border-b border-white pb-0.5 glow-on-hover">
                 View projects
@@ -192,7 +201,8 @@
     (function () {
       const slides = [
         { id: "1028598931", title: "Largo",                year: "2024", dir: "Burgoyne-Moore / Scarpa", poster: "LargoStills_4.1.16.png" },
-        { id: "1191491926", title: "A Million Days",       year: "2024", dir: "Mitch Jenkins",           poster: "IMG_2486.JPG" },
+        { id: "1191491926", title: "A Million Days",       year: "2024", dir: "Mitch Jenkins",           poster: "IMG_2486.JPG",
+          primeUrl: "https://www.amazon.com/Million-Days-Mitch-Jenkins/dp/B0D6G6LL1Y" },
         { id: "997760313",  title: "Whim Rules the Child", year: "2024", dir: "Katla Sólnes",            poster: "WhimRulesTheChild.jpg" },
         { id: "1191500024", title: "The Big Breakfast",    year: "2025", dir: "Chris Hyde",              poster: "Sequence_01.00_00_35_19.Still013.jpg" },
       ];
@@ -202,6 +212,7 @@
       const nowShowing = document.getElementById('homeNowShowing');
       const watchPill  = document.getElementById('homeWatchPill');
       const watchLabel = document.getElementById('homeWatchLabel');
+      const primeLink  = document.getElementById('homePrimeLink');
       if (!iframe) return;
 
       const vimeoSrc = (id) =>
@@ -228,6 +239,14 @@
           }
           if (watchPill)  watchPill.href = `https://vimeo.com/${s.id}`;
           if (watchLabel) watchLabel.textContent = `Watch · ${s.title} trailer`;
+          if (primeLink) {
+            if (s.primeUrl) {
+              primeLink.href = s.primeUrl;
+              primeLink.classList.remove('hidden');
+            } else {
+              primeLink.classList.add('hidden');
+            }
+          }
         }, 700);
       }
 
