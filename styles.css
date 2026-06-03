@@ -515,6 +515,29 @@ body {
   line-height: 1;
 }
 
+/* Shrink the laurel boxes on phones so the row reads as a compact grid
+   instead of two oversized tiles per line. */
+@media (max-width: 640px) {
+  .laurels { gap: 12px 12px; }
+  .laurel {
+    width: 96px;
+    height: 58px;
+    flex: 0 0 96px;
+  }
+  .laurel:not(.laurel--img) {
+    grid-template-columns: 12px minmax(0, 1fr) 12px;
+    gap: 3px;
+  }
+  .l-leaf {
+    width: 12px;
+    height: 44px;
+  }
+  .l-eyebrow { font-size: 6px; letter-spacing: .18em; }
+  .l-title   { font-size: 9px; }
+  .l-meta    { font-size: 7.5px; }
+  .laurel.laurel--oscars figcaption { gap: 1px; }
+}
+
 /* 2-column laurel grid — used in narrow side columns on /work */
 .laurels.laurels-2col {
   display: grid;
