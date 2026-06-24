@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*

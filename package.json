@@ -1,0 +1,23 @@
+{
+  "name": "plan-nine-pictures",
+  "version": "1.0.0",
+  "description": "Plan Nine Pictures - A UK-based independent entertainment company empowering visionary storytellers",
+  "main": "site.js",
+  "scripts": {
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hamy515/Plan-Nine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hamy515/Plan-Nine/issues"
+  },
+  "homepage": "https://github.com/Hamy515/Plan-Nine#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
