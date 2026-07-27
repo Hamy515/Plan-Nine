@@ -36,21 +36,42 @@ body {
   line-height: 1;
 }
 .it { font-style: italic; letter-spacing: -0.025em; }
+
+/* Micro-label voice. Archivo held slightly narrow at medium weight — reads as
+   a printed caption rather than a wide-tracked UI eyebrow. Tabular figures so
+   years and dates align down a column. */
 .mono {
-  font-family: "Geist Mono", monospace;
-  letter-spacing: 0.06em;
-  font-feature-settings: "ss02";
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  font-stretch: 86%;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-feature-settings: "tnum" 1;
 }
 
 /* Nav */
 .nav-link {
-  color: #c2c4c9; letter-spacing: .16em; transition: color .3s ease;
+  position: relative;
+  color: #94969d;
+  font-weight: 500;
+  letter-spacing: .055em;
+  transition: color .35s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -5px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .45s cubic-bezier(.22,.7,.2,1);
 }
 .nav-link:hover { color: #fff; }
+.nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
 .nav-link.active { color: #fff; }
 .nav-link.active::after {
-  content:""; display:block; height:1px; margin-top:3px;
-  background: rgba(255,255,255,.5);
+  transform: scaleX(1);
+  background: rgba(255,255,255,.45);
 }
 
 /* ============================================================
@@ -160,8 +181,8 @@ body {
   background: rgba(0,0,0,.4);
   backdrop-filter: blur(8px);
   color: #fff;
-  font-family: "Geist Mono", monospace;
-  font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  font-size: 11px; letter-spacing: .05em; text-transform: uppercase;
   transition: border-color .35s ease, background .35s ease, color .3s ease;
 }
 .carousel-btn:hover {
@@ -192,7 +213,7 @@ body {
   background: rgba(0,0,0,.4);
   backdrop-filter: blur(10px);
   color: #fff;
-  font-family: "Geist Mono", monospace;
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
   font-size: 18px; line-height: 1;
   cursor: pointer;
   transition: border-color .35s ease, background .35s ease, transform .35s cubic-bezier(.2,.7,.2,1);
@@ -227,7 +248,7 @@ body {
   background: rgba(0,0,0,.4);
   backdrop-filter: blur(8px);
   color: #fff;
-  font-family: "Geist Mono", monospace;
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
   font-size: 15px; line-height: 1;
   cursor: pointer;
   transition: border-color .3s ease, background .3s ease;
@@ -358,9 +379,9 @@ body {
   min-width: 0;
 }
 .l-eyebrow {
-  font-family: "Geist Mono", monospace;
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
   font-size: 7px;
-  letter-spacing: .22em;
+  letter-spacing: .09em;
   text-transform: uppercase;
   color: #bdbec3;
   line-height: 1;
@@ -375,9 +396,9 @@ body {
   text-wrap: balance;
 }
 .l-meta {
-  font-family: "Geist Mono", monospace;
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
   font-size: 7.5px;
-  letter-spacing: .2em;
+  letter-spacing: .07em;
   text-transform: uppercase;
   color: #888a90;
   line-height: 1;
@@ -436,9 +457,9 @@ body {
   text-decoration: none;
 }
 .prime-link__eyebrow {
-  font-family: "Geist Mono", monospace;
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
   font-size: 10.5px;
-  letter-spacing: .22em;
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: #888a90;
   transition: color .3s ease;
@@ -458,7 +479,7 @@ body {
   transition: opacity .35s ease;
 }
 .prime-link__arrow {
-  font-family: "Geist Mono", monospace;
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
   font-size: 11px;
   color: #888a90;
   transition: color .3s ease, transform .3s cubic-bezier(.2,.7,.2,1);
@@ -517,7 +538,7 @@ body {
     width: 12px;
     height: 44px;
   }
-  .l-eyebrow { font-size: 6px; letter-spacing: .18em; }
+  .l-eyebrow { font-size: 6px; letter-spacing: .08em; }
   .l-title   { font-size: 9px; }
   .l-meta    { font-size: 7.5px; }
   .laurel.laurel--oscars figcaption { gap: 1px; }
@@ -687,4 +708,79 @@ body {
 }
 @media (min-width: 768px) {
   .ig-embed iframe { height: 600px; }
+}
+
+/* ============================================================
+   HERO STATEMENT (home)
+   ============================================================ */
+/* The headline carries the page on its own — no name eyebrow above it,
+   since the logo already sits directly overhead. */
+.hero-statement {
+  letter-spacing: -0.042em;
+  line-height: 1.01;
+  text-wrap: balance;
+}
+.hero-statement em {
+  font-style: italic;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+
+/* Hairline that draws itself in under the logo on load. */
+.rule-draw {
+  display: block;
+  height: 1px;
+  width: 100%;
+  max-width: 300px;
+  background: linear-gradient(90deg, rgba(255,255,255,.5), rgba(255,255,255,0));
+  transform-origin: left;
+  animation: rule-in 1.3s cubic-bezier(.22,.7,.2,1) .35s both;
+}
+@keyframes rule-in {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ============================================================
+   METADATA ROW — key/value strip, spacing does the separating
+   ============================================================ */
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .35rem 1.75rem;
+}
+.meta-row .meta-key { color: #74767c; }
+.meta-row .meta-val { color: #fff; }
+.meta-row .meta-sub { color: #9a9ca3; }
+
+/* ============================================================
+   PROJECT INDEX — category/year marker for each filmography entry
+   ============================================================ */
+/* Replaces the old "N° 01 — Category · Year" run-on: two plain fields
+   separated by space, with a rule carrying the horizontal movement the
+   dash used to. */
+.proj-index {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  padding-bottom: .55rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  font-stretch: 86%;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-feature-settings: "tnum" 1;
+  transition: border-color .5s ease;
+}
+.proj-cat  { color: #ededed; font-weight: 500; }
+.proj-year { color: #85878d; font-weight: 400; }
+
+article:hover .proj-index { border-color: rgba(255,255,255,.3); }
+
+@media (max-width: 767px) {
+  .proj-index { gap: .85rem; font-size: 10.5px; }
 }

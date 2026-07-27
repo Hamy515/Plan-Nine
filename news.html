@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -17,7 +17,7 @@
       theme: { extend: {
         fontFamily: {
           sans:    ['"Schibsted Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-          mono:    ['"Geist Mono"', 'ui-monospace', 'monospace'],
+          mono:    ['"Archivo"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
           display: ['"Schibsted Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         },
         colors: {
@@ -28,7 +28,7 @@
     };
   </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 
 <body class="grain vignette font-sans bg-paper text-bone selection:bg-white selection:text-black">
@@ -39,20 +39,20 @@
         <img src="assets/PLANNINE_LOGO_NEW__f8e27c2b.png" alt="Plan Nine Pictures" class="logo-base" />
         <span class="logo-shine" aria-hidden="true"></span>
       </a>
-      <ul class="hidden md:flex items-center gap-9 mono text-[11px] uppercase">
+      <ul class="hidden md:flex items-center gap-8 mono text-[12px] uppercase">
         <li><a class="nav-link" data-nav="work.html"     href="work.html">Work</a></li>
         <li><a class="nav-link" data-nav="about.html"    href="about.html">About</a></li>
         <li><a class="nav-link" data-nav="team.html"     href="team.html">Team</a></li>
         <li><a class="nav-link" data-nav="news.html"     href="news.html">News</a></li>
         <li><a class="nav-link" data-nav="contact.html"  href="contact.html">Contact</a></li>
       </ul>
-      <a href="contact.html" class="hidden md:inline-block mono text-[11px] uppercase border-b border-white/30 hover:border-white text-white pb-0.5 transition-colors glow-on-hover">Enquiries</a>
+      <a href="contact.html" class="hidden md:inline-block mono text-[12px] uppercase border-b border-white/30 hover:border-white text-white pb-0.5 transition-colors glow-on-hover">Enquiries</a>
       <button id="navToggle" class="md:hidden text-bone" aria-label="Open menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
       </button>
     </nav>
     <div id="mobileMenu" class="hidden md:hidden border-t border-white/5 bg-black">
-      <ul class="flex flex-col px-6 py-6 gap-4 mono text-[12px] uppercase">
+      <ul class="flex flex-col px-6 py-6 gap-4 mono text-[13px] uppercase">
         <li><a class="nav-link" data-nav="work.html"     href="work.html">Work</a></li>
         <li><a class="nav-link" data-nav="about.html"    href="about.html">About</a></li>
         <li><a class="nav-link" data-nav="team.html"     href="team.html">Team</a></li>
@@ -82,7 +82,7 @@
           </div>
           <span class="mono text-[11px] uppercase text-silver md:block hidden">14.03.26</span>
           <div>
-            <span class="mono text-[11px] uppercase text-silver md:hidden block mb-1">14.03.26 · Award</span>
+            <span class="mono text-[11px] uppercase text-silver md:hidden block mb-1">14.03.26<span class="mx-2 text-white/25">/</span>Award</span>
             <div class="display text-xl md:text-2xl text-bone leading-snug news-title">
               Whim Rules the Child wins Best International Short at Manchester 2026
             </div>
@@ -97,7 +97,7 @@
           </div>
           <span class="mono text-[11px] uppercase text-silver md:block hidden">21.01.26</span>
           <div>
-            <span class="mono text-[11px] uppercase text-silver md:hidden block mb-1">21.01.26 · Awards</span>
+            <span class="mono text-[11px] uppercase text-silver md:hidden block mb-1">21.01.26<span class="mx-2 text-white/25">/</span>Awards</span>
             <div class="display text-xl md:text-2xl text-bone leading-snug news-title">
               Largo longlisted for the 2026 Academy Awards®
             </div>
@@ -112,7 +112,7 @@
           </div>
           <span class="mono text-[11px] uppercase text-silver md:block hidden">08.10.25</span>
           <div>
-            <span class="mono text-[11px] uppercase text-silver md:hidden block mb-1">08.10.25 · Premiere</span>
+            <span class="mono text-[11px] uppercase text-silver md:hidden block mb-1">08.10.25<span class="mx-2 text-white/25">/</span>Premiere</span>
             <div class="display text-xl md:text-2xl text-bone leading-snug news-title">
               The Big Breakfast premieres in Midnight X-treme at SITGES
             </div>
@@ -127,7 +127,7 @@
           </div>
           <span class="mono text-[11px] uppercase text-silver md:block hidden">02.09.24</span>
           <div>
-            <span class="mono text-[11px] uppercase text-silver md:hidden block mb-1">02.09.24 · Release</span>
+            <span class="mono text-[11px] uppercase text-silver md:hidden block mb-1">02.09.24<span class="mx-2 text-white/25">/</span>Release</span>
             <div class="display text-xl md:text-2xl text-bone leading-snug news-title">
               A Million Days released by Signature Entertainment
             </div>
