@@ -28,7 +28,7 @@
     };
   </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=5" />
 </head>
 
 <body class="grain vignette font-sans bg-paper text-bone selection:bg-white selection:text-black">
@@ -202,12 +202,11 @@
               <div class="flex justify-between gap-6"><dt class="text-silver">Director</dt><dd>Burgoyne-Moore / Scarpa</dd></div>
               <div class="flex justify-between gap-6"><dt class="text-silver">Cast</dt><dd>Tamsin Greig, Kevin McNally</dd></div>
             </dl>
-            <a href="https://vimeo.com/1028598931" target="_blank" rel="noopener"
-               class="watch-pill mono text-[11px] uppercase text-white self-start">
-              <span class="play-dot" aria-hidden="true"></span>
-              Watch trailer
-              <span aria-hidden="true">↗</span>
-            </a>
+            <button type="button" data-trailer="vimeo:1028598931"
+               class="watch-pill mono text-[11px] uppercase text-white self-start" aria-label="Watch the Largo trailer">
+                 <span class="play-dot" aria-hidden="true"></span>
+                 Watch trailer
+               </button>
           </div>
           <div class="md:col-span-12 rule-soft pt-6 md:pt-7">
             <div class="laurels">
@@ -273,12 +272,11 @@
               <div class="flex justify-between gap-6"><dt class="text-silver">Distribution</dt><dd>Signature Entertainment</dd></div>
             </dl>
             <div class="flex flex-wrap items-center gap-x-6 gap-y-4 self-start">
-              <a href="https://www.youtube.com/watch?v=u_pfywIHaiA" target="_blank" rel="noopener"
-                 class="watch-pill mono text-[11px] uppercase text-white">
-                <span class="play-dot" aria-hidden="true"></span>
-                Watch trailer
-                <span aria-hidden="true">↗</span>
-              </a>
+              <button type="button" data-trailer="youtube:u_pfywIHaiA"
+                 class="watch-pill mono text-[11px] uppercase text-white" aria-label="Watch the A Million Days trailer">
+                   <span class="play-dot" aria-hidden="true"></span>
+                   Watch trailer
+                 </button>
               <a href="https://www.amazon.com/Million-Days-Mitch-Jenkins/dp/B0D6G6LL1Y"
                  target="_blank" rel="noopener"
                  class="prime-link"
@@ -324,12 +322,11 @@
               <div class="flex justify-between gap-6"><dt class="text-silver">Director</dt><dd>Katla Sólnes</dd></div>
               <div class="flex justify-between gap-6"><dt class="text-silver">Cast</dt><dd>Edda Björgvinsdóttir</dd></div>
             </dl>
-            <a href="https://vimeo.com/997760313" target="_blank" rel="noopener"
-               class="watch-pill mono text-[11px] uppercase text-white self-start">
-              <span class="play-dot" aria-hidden="true"></span>
-              Watch trailer
-              <span aria-hidden="true">↗</span>
-            </a>
+            <button type="button" data-trailer="vimeo:997760313"
+               class="watch-pill mono text-[11px] uppercase text-white self-start" aria-label="Watch the Whim Rules the Child trailer">
+                 <span class="play-dot" aria-hidden="true"></span>
+                 Watch trailer
+               </button>
           </div>
           <div class="md:col-span-12 rule-soft pt-6 md:pt-7">
             <div class="laurels">
@@ -374,12 +371,11 @@
               <div class="flex justify-between gap-6"><dt class="text-silver">Director</dt><dd>Chris Hyde</dd></div>
               <div class="flex justify-between gap-6"><dt class="text-silver">Cast</dt><dd>Charlie Bateman, David Schaal</dd></div>
             </dl>
-            <a href="https://vimeo.com/1191500024" target="_blank" rel="noopener"
-               class="watch-pill mono text-[11px] uppercase text-white self-start">
-              <span class="play-dot" aria-hidden="true"></span>
-              Watch trailer
-              <span aria-hidden="true">↗</span>
-            </a>
+            <button type="button" data-trailer="vimeo:1191500024"
+               class="watch-pill mono text-[11px] uppercase text-white self-start" aria-label="Watch the Big Breakfast trailer">
+                 <span class="play-dot" aria-hidden="true"></span>
+                 Watch trailer
+               </button>
           </div>
           <div class="md:col-span-12 rule-soft pt-6 md:pt-7">
             <div class="laurels">
@@ -497,7 +493,7 @@
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <script src="site.js?v=2"></script>
   <script>
     // ===== Trailer carousel =====
     const slides = [

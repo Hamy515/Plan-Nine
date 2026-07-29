@@ -266,6 +266,7 @@ body {
   border-radius: 999px;
   backdrop-filter: blur(6px);
   background: rgba(0,0,0,.25);
+  cursor: pointer;
   transition: border-color .35s ease, background .35s ease;
 }
 .watch-pill:hover {
@@ -306,6 +307,17 @@ body {
   box-shadow: inset 0 0 80px rgba(0,0,0,.6);
   pointer-events: none; z-index: 1;
 }
+
+/* Trailer playing in place of the still. The vignette and inner shadow are
+   grading for a still frame — they'd just muddy a moving image. */
+.frame iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0; display: block; z-index: 2;
+}
+.frame.is-playing::before,
+.frame.is-playing::after { display: none; }
+.frame.is-playing img { filter: none; }
 
 /* Reveal on scroll */
 .reveal { opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
