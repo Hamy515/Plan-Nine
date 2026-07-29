@@ -30,34 +30,46 @@
   });
 
   // Inline trailers (/work): play the film in its own still's frame.
-  const embedSrc = (ref) => {
-    const [provider, id] = ref.split(':');
-    return provider === 'youtube'
-      ? `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1`
-      : `https://player.vimeo.com/video/${id}?autoplay=1&playsinline=1&title=0&byline=0&portrait=0&dnt=1`;
+  const embedSrc = (id) =>
+    `https://player.vimeo.com/video/${id}?autoplay=1&playsinline=1&title=0&byline=0&portrait=0&dnt=1`;
+
+  const playTrailer = (article, ref) => {
+    const frame = article && article.querySelector('.frame');
+    if (!frame || frame.classList.contains('is-playing')) return;
+
+    // One at a time — two trailers playing means two soundtracks at once.
+    document.querySelectorAll('.frame.is-playing').forEach(open => {
+      open.classList.remove('is-playing');
+      const playing = open.querySelector('iframe');
+      if (playing) playing.remove();
+    });
+
+    const title = article.querySelector('h3');
+    const iframe = document.createElement('iframe');
+    iframe.src = embedSrc(ref);
+    iframe.title = `${title ? title.textContent.trim() : 'Film'} — trailer`;
+    iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+    iframe.setAttribute('allowfullscreen', '');
+    frame.appendChild(iframe);
+    frame.classList.add('is-playing');
   };
 
   document.querySelectorAll('[data-trailer]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const article = btn.closest('article');
-      const frame = article && article.querySelector('.frame');
-      if (!frame || frame.classList.contains('is-playing')) return;
+    const article = btn.closest('article');
+    const frame = article && article.querySelector('.frame');
+    const ref = btn.dataset.trailer;
+    btn.addEventListener('click', () => playTrailer(article, ref));
+    if (!frame) return;
 
-      // One at a time — two trailers playing means two soundtracks at once.
-      document.querySelectorAll('.frame.is-playing').forEach(open => {
-        open.classList.remove('is-playing');
-        const playing = open.querySelector('iframe');
-        if (playing) playing.remove();
-      });
-
-      const title = article.querySelector('h3');
-      const iframe = document.createElement('iframe');
-      iframe.src = embedSrc(btn.dataset.trailer);
-      iframe.title = `${title ? title.textContent.trim() : 'Film'} — trailer`;
-      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
-      iframe.setAttribute('allowfullscreen', '');
-      frame.appendChild(iframe);
-      frame.classList.add('is-playing');
-    });
+    // Second way in, over the still itself. Hidden from assistive tech and
+    // skipped in the tab order — the pill already exposes this action once.
+    const overlay = document.createElement('button');
+    overlay.type = 'button';
+    overlay.className = 'frame-play';
+    overlay.tabIndex = -1;
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.innerHTML = '<span class="frame-play__disc"></span>';
+    overlay.addEventListener('click', () => playTrailer(article, ref));
+    frame.appendChild(overlay);
   });
 })();
