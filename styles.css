@@ -711,7 +711,7 @@ body {
 
 /* Page header (subpages) */
 .page-head {
-  padding: 9rem 0 4.5rem;
+  padding: 7rem 0 2.75rem;
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 @media (min-width: 768px) { .page-head { padding: 11rem 0 6rem; } }
@@ -804,6 +804,18 @@ body {
 .meta-row .meta-key { color: #74767c; }
 .meta-row .meta-val { color: #fff; }
 .meta-row .meta-sub { color: #9a9ca3; }
+.meta-film { display: inline-flex; align-items: baseline; gap: 1.25rem; }
+
+/* On a phone the row wraps mid-credit and reads as loose text. Stack it as a
+   labelled caption instead: "Now showing" heads the block, then the film. */
+@media (max-width: 639px) {
+  .meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .3rem;
+  }
+  .meta-row .meta-key { color: #6a6c72; }
+}
 
 /* ============================================================
    PROJECT INDEX — category/year marker for each filmography entry
