@@ -117,11 +117,10 @@
 
             <div class="lg:col-span-4 lg:col-start-9 self-end">
               <div class="flex flex-col items-start gap-5 lg:flex-row lg:items-center lg:gap-10">
-                <a id="wkFilmLink" href="https://vimeo.com/1028598931" target="_blank" rel="noopener"
+                <a id="wkFilmLink" href="#watch-1028598931" data-trailer-target="1028598931"
                    class="watch-pill mono text-[11px] uppercase text-white">
                   <span class="play-dot" aria-hidden="true"></span>
                   Watch trailer
-                  <span aria-hidden="true">↗</span>
                 </a>
                 <a id="wkPrimeLink" href="#" target="_blank" rel="noopener"
                    class="prime-link hidden"
@@ -186,7 +185,7 @@
       <div class="max-w-[1480px] mx-auto px-6 lg:px-10 space-y-20 md:space-y-28">
 
         <!-- 01 · LARGO -->
-        <article class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+        <article id="watch-1028598931" class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-start">
           <div class="md:col-span-7 frame aspect-[2.39/1]">
             <img src="assets/LargoStills_4.1.16.png" alt="Largo (still)" />
           </div>
@@ -253,7 +252,7 @@
         </article>
 
         <!-- 02 · A MILLION DAYS -->
-        <article class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+        <article id="watch-1191491926" class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-start">
           <div class="md:col-span-7 frame aspect-[2.39/1]">
             <img src="assets/Copy_of_A_MILLION-DAYS_WIDESCREEN.jpg" alt="A Million Days (still)" />
           </div>
@@ -306,7 +305,7 @@
         </article>
 
         <!-- 03 · WHIM RULES THE CHILD -->
-        <article class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+        <article id="watch-997760313" class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-start">
           <div class="md:col-span-7 frame aspect-[2.39/1]">
             <img src="assets/WhimRulesTheChild.jpg" alt="Whim Rules the Child (still)" style="object-position: 50% 100%;" />
           </div>
@@ -354,7 +353,7 @@
         </article>
 
         <!-- 04 · THE BIG BREAKFAST -->
-        <article class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+        <article id="watch-1191500024" class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-start">
           <div class="md:col-span-7 frame aspect-[2.39/1]">
             <img src="assets/Sequence_01.00_00_35_19.Still013.jpg" alt="The Big Breakfast (still)" />
           </div>
@@ -516,7 +515,7 @@
     </div>
   </footer>
 
-  <script src="site.js?v=3"></script>
+  <script src="site.js?v=4"></script>
   <script>
     // ===== Trailer carousel =====
     const slides = [
@@ -579,7 +578,8 @@
         typeEl.textContent  = s.type;
 
         if (s.url) {
-          linkEl.href = s.url;
+          linkEl.href = '#watch-' + s.vimeoId;
+          linkEl.dataset.trailerTarget = s.vimeoId;
           linkEl.style.opacity = '1';
           linkEl.style.pointerEvents = 'auto';
           linkEl.querySelector('span:nth-child(2)') && (linkEl.childNodes[2].textContent = ' Watch trailer ');

@@ -72,4 +72,43 @@
     overlay.addEventListener('click', () => playTrailer(article, ref));
     frame.appendChild(overlay);
   });
+
+  // Jump to a film's card and start it. Used by the hero pill here and by the
+  // home page, which links across as work.html#watch-<id>.
+  const playFilmById = (id, smooth) => {
+    const btn = document.querySelector(`[data-trailer="${id}"]`);
+    const article = btn && btn.closest('article');
+    if (!article) return false;
+    // 'instant' is explicit: html sets scroll-behavior:smooth, and animating
+    // the whole way down on arrival is slow and lands short if interrupted.
+    article.scrollIntoView({ behavior: smooth ? 'smooth' : 'instant', block: 'center' });
+    playTrailer(article, id);
+    return true;
+  };
+
+  const heroPill = document.getElementById('wkFilmLink');
+  if (heroPill) {
+    heroPill.addEventListener('click', (e) => {
+      // Fall through to the plain anchor jump if the card isn't there.
+      if (playFilmById(heroPill.dataset.trailerTarget, true)) e.preventDefault();
+    });
+  }
+
+  const arriving = /^#watch-(\d+)$/.exec(location.hash);
+  if (arriving) {
+    const id = arriving[1];
+    const reAnchor = () => {
+      const btn = document.querySelector(`[data-trailer="${id}"]`);
+      const article = btn && btn.closest('article');
+      if (article) article.scrollIntoView({ behavior: 'instant', block: 'center' });
+    };
+    requestAnimationFrame(() => {
+      playFilmById(id, false);
+      // Stills above this card load after the jump and push it down. Re-anchor
+      // a couple of times rather than waiting on window.load, which would also
+      // wait for the Vimeo backplate in the hero.
+      setTimeout(reAnchor, 250);
+      setTimeout(reAnchor, 900);
+    });
+  }
 })();

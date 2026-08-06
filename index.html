@@ -117,11 +117,10 @@
             </p>
 
             <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-4">
-              <a id="homeWatchPill" href="https://vimeo.com/1028598931" target="_blank" rel="noopener"
+              <a id="homeWatchPill" href="work.html#watch-1028598931"
                  class="watch-pill mono text-[11px] uppercase text-white">
                 <span class="play-dot" aria-hidden="true"></span>
                 <span id="homeWatchLabel">Watch Largo trailer</span>
-                <span aria-hidden="true">↗</span>
               </a>
               <a id="homePrimeLink" href="#" target="_blank" rel="noopener"
                  class="prime-link hidden"
@@ -199,7 +198,7 @@
     </div>
   </footer>
 
-  <script src="site.js?v=3"></script>
+  <script src="site.js?v=4"></script>
   <script>
     // ===== Home hero · auto-cycling trailer mashup =====
     (function () {
@@ -242,7 +241,7 @@
           if (nowTitle) nowTitle.textContent = s.title;
           if (nowYear)  nowYear.textContent  = s.year;
           if (nowDir)   nowDir.textContent   = `dir. ${s.dir}`;
-          if (watchPill)  watchPill.href = `https://vimeo.com/${s.id}`;
+          if (watchPill)  watchPill.href = `work.html#watch-${s.id}`;
           if (watchLabel) watchLabel.textContent = `Watch ${s.title} trailer`;
           if (primeLink) {
             if (s.primeUrl) {
