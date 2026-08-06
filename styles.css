@@ -772,15 +772,9 @@ body {
 /* The headline carries the page on its own — no name eyebrow above it,
    since the logo already sits directly overhead. */
 .hero-statement {
-  letter-spacing: -0.042em;
-  line-height: 1.01;
+  letter-spacing: -0.032em;
+  line-height: 1.08;
   text-wrap: balance;
-}
-.hero-statement em {
-  font-style: italic;
-  font-weight: 400;
-  color: #fff;
-  letter-spacing: -0.03em;
 }
 
 /* Hairline that draws itself in under the logo on load. */
