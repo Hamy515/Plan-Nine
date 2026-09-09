@@ -869,6 +869,9 @@ article:hover .proj-index { border-color: rgba(255,255,255,.3); }
      a few pixels of black between plates. Zero the line box to butt them. */
   line-height: 0;
 }
+/* <picture> is inline by default, which would put the image back on a text
+   baseline and reopen the gap between plates. */
+.iw-frame picture { display: block; }
 .iw-frame img {
   display: block;
   width: 100%;
