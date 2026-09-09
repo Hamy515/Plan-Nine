@@ -1058,7 +1058,9 @@ article:hover .proj-index { border-color: rgba(255,255,255,.3); }
   text-align: center;
 }
 .iw-outro__lead {
-  margin: 0;
+  /* Must keep the auto side margins from .iw-outro > *, or this block loses
+     its centring and sits against the left padding edge on wide screens. */
+  margin: 0 auto;
   padding-top: 2.25rem;
   border-top: 1px solid rgba(255,255,255,.14);
   font-size: 18px;
