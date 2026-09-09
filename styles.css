@@ -1096,3 +1096,12 @@ article:hover .proj-index { border-color: rgba(255,255,255,.3); }
 @media (min-width: 1024px) {
   .iw-plate--mobile-only { display: none; }
 }
+
+/* A heading followed straight by a tier drew two rules a few pixels apart -
+   the heading's underline and the tier's top border. Where they meet, the
+   heading's rule is the one that does the work. */
+.iw-copy h2 + .iw-tier {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 1.9rem;
+}
