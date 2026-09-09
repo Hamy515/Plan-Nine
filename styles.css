@@ -1107,3 +1107,8 @@ article:hover .proj-index { border-color: rgba(255,255,255,.3); }
   padding-top: 0;
   margin-top: 1.9rem;
 }
+
+/* Plate 5 shows unrelated artwork at each breakpoint, so it holds one frame
+   per width rather than swapping a source. */
+@media (max-width: 1023px) { .iw-frame--desktop-only { display: none; } }
+@media (min-width: 1024px) { .iw-frame--mobile-only  { display: none; } }
