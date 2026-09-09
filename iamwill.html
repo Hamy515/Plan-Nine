@@ -111,9 +111,9 @@
         <picture>
           <source media="(min-width: 1024px)" srcset="assets/iamwill-04-tiers-opportunity.jpg"
                   width="1920" height="1080" />
-          <img src="assets/iamwill-04-tiers-opportunity-mobile.jpg" width="1920" height="1080"
+          <img src="assets/iamwill-04-street-mobile.jpg" width="1920" height="1080"
                loading="lazy" decoding="async"
-               alt="Headline “OPPORTUNITY” over a blurred night interior, with three investment tiers printed on crumpled pub receipts." />
+               alt="A figure in a greatcoat and cap carrying a bag, alone on a snowbound forest road at night." />
         </picture>
       </div>
 
@@ -210,6 +210,21 @@
          class="iw-cta iw-cta--pay watch-pill mono text-[11px] uppercase text-white">
         Donate Now
       </a>
+    </section>
+
+    <!-- ============ 6 · Closing image (phones and tablets only) ============ -->
+    <section class="iw-plate iw-plate--mobile-only">
+      <div class="iw-frame">
+        <picture>
+          <!-- display:none alone does not stop the fetch, so desktop is handed a
+               1x1 transparent GIF and never requests the photograph. -->
+          <source media="(min-width: 1024px)"
+                  srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+          <img src="assets/iamwill-06-forest-floor-mobile.jpg" width="1920" height="1080"
+               loading="lazy" decoding="async"
+               alt="Seen from above, a man lies curled on a sunlit woodland path among moss and fallen leaves." />
+        </picture>
+      </div>
     </section>
 
     <!-- ============ Contact ============ -->

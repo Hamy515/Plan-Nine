@@ -1088,3 +1088,11 @@ article:hover .proj-index { border-color: rgba(255,255,255,.3); }
   .iw-outro__lead { font-size: 21px; }
   .iw-outro__note { font-size: 17.5px; }
 }
+
+/* The closing plate belongs to the phone and tablet reading order only.
+   display:none hides it, but does not stop the browser fetching the image -
+   measured, it downloads at desktop widths regardless of loading="lazy" - so
+   the markup also hands desktop a 1x1 data URI in its place. */
+@media (min-width: 1024px) {
+  .iw-plate--mobile-only { display: none; }
+}
