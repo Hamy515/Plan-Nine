@@ -30,8 +30,9 @@
   });
 
   // Inline trailers (/work): play the film in its own still's frame.
-  const embedSrc = (id) =>
-    `https://player.vimeo.com/video/${id}?autoplay=1&playsinline=1&title=0&byline=0&portrait=0&dnt=1`;
+  // Unlisted videos also need their privacy hash (data-trailer-hash).
+  const embedSrc = (id, hash) =>
+    `https://player.vimeo.com/video/${id}?${hash ? `h=${hash}&` : ''}autoplay=1&playsinline=1&title=0&byline=0&portrait=0&dnt=1`;
 
   const playTrailer = (article, ref) => {
     const frame = article && article.querySelector('.frame');
@@ -46,7 +47,8 @@
 
     const title = article.querySelector('h3');
     const iframe = document.createElement('iframe');
-    iframe.src = embedSrc(ref);
+    const btn = article.querySelector(`[data-trailer="${ref}"]`);
+    iframe.src = embedSrc(ref, btn && btn.dataset.trailerHash);
     iframe.title = `${title ? title.textContent.trim() : 'Film'} — trailer`;
     iframe.allow = 'autoplay; fullscreen; picture-in-picture';
     iframe.setAttribute('allowfullscreen', '');
