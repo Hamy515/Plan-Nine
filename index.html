@@ -208,6 +208,8 @@
           primeUrl: "https://www.amazon.com/Million-Days-Mitch-Jenkins/dp/B0D6G6LL1Y" },
         { id: "997760313",  title: "Whim Rules the Child", year: "2024", dir: "Katla Sólnes",            poster: "WhimRulesTheChild.jpg" },
         { id: "1191500024", title: "The Big Breakfast",    year: "2025", dir: "Chris Hyde",              poster: "Sequence_01.00_00_35_19.Still013.jpg" },
+        // Unlisted on Vimeo, so it needs its privacy hash.
+        { id: "1231264846", hash: "42fb9392e0", title: "Twist Again", year: "2026", dir: "Kelia Ideishi", poster: "TWISTAGAINSTILL.jpg", kind: "teaser" },
       ];
 
       const iframe     = document.getElementById('homeTrailer');
@@ -220,8 +222,8 @@
       const primeLink  = document.getElementById('homePrimeLink');
       if (!iframe) return;
 
-      const vimeoSrc = (id) =>
-        `https://player.vimeo.com/video/${id}?background=1&autoplay=1&loop=1&muted=1&autopause=0&controls=0&title=0&byline=0&portrait=0&dnt=1&quality=1080p`;
+      const vimeoSrc = (id, hash) =>
+        `https://player.vimeo.com/video/${id}?${hash ? `h=${hash}&` : ''}background=1&autoplay=1&loop=1&muted=1&autopause=0&controls=0&title=0&byline=0&portrait=0&dnt=1&quality=1080p`;
 
       let cur = 0;
       let timer;
@@ -234,7 +236,7 @@
         plate.style.opacity  = '0';
 
         setTimeout(() => {
-          iframe.src = vimeoSrc(s.id);
+          iframe.src = vimeoSrc(s.id, s.hash);
           plate.style.opacity  = '1';
           iframe.style.opacity = '1';
 
@@ -242,7 +244,7 @@
           if (nowYear)  nowYear.textContent  = s.year;
           if (nowDir)   nowDir.textContent   = `dir. ${s.dir}`;
           if (watchPill)  watchPill.href = `work.html#watch-${s.id}`;
-          if (watchLabel) watchLabel.textContent = `Watch ${s.title} trailer`;
+          if (watchLabel) watchLabel.textContent = `Watch ${s.title} ${s.kind || 'trailer'}`;
           if (primeLink) {
             if (s.primeUrl) {
               primeLink.href = s.primeUrl;
