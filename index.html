@@ -94,6 +94,14 @@
       ></iframe>
     </div>
 
+    <!-- Next arrow is always there; previous appears once we've moved on -->
+    <button class="hero-side-nav prev hidden" id="homePrevBtn" aria-label="Previous trailer">
+      <span aria-hidden="true">←</span>
+    </button>
+    <button class="hero-side-nav next inline-flex" id="homeNextBtn" aria-label="Next trailer">
+      <span aria-hidden="true">→</span>
+    </button>
+
     <div class="hero-content flex flex-col flex-1">
       <div class="flex-1 flex items-end">
         <div class="w-full max-w-[1480px] mx-auto px-6 lg:px-10 pt-36 pb-12 md:pb-16">
@@ -198,6 +206,8 @@
       const watchPill  = document.getElementById('homeWatchPill');
       const watchLabel = document.getElementById('homeWatchLabel');
       const primeLink  = document.getElementById('homePrimeLink');
+      const prevBtn    = document.getElementById('homePrevBtn');
+      const nextBtn    = document.getElementById('homeNextBtn');
       if (!iframe) return;
 
       const vimeoSrc = (id, hash) =>
@@ -209,6 +219,7 @@
       function show(i) {
         cur = (i + slides.length) % slides.length;
         const s = slides[cur];
+        if (prevBtn) prevBtn.classList.toggle('hidden', cur === 0);
 
         iframe.style.opacity = '0';
         plate.style.opacity  = '0';
@@ -236,6 +247,15 @@
 
       function start() { timer = setInterval(() => show(cur + 1), 18000); }
       function stop()  { clearInterval(timer); }
+
+      // A manual step restarts the clock, so the next slide doesn't arrive early.
+      function step(d) { stop(); show(cur + d); start(); }
+      if (prevBtn) prevBtn.addEventListener('click', () => step(-1));
+      if (nextBtn) nextBtn.addEventListener('click', () => step(1));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') step(1);
+        if (e.key === 'ArrowLeft' && cur > 0) step(-1);
+      });
 
       show(0);
       start();
