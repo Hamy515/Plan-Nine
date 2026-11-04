@@ -49,7 +49,7 @@
     const iframe = document.createElement('iframe');
     const btn = article.querySelector(`[data-trailer="${ref}"]`);
     iframe.src = embedSrc(ref, btn && btn.dataset.trailerHash);
-    iframe.title = `${title ? title.textContent.trim() : 'Film'} — trailer`;
+    iframe.title = `${title ? title.textContent.trim() : 'Film'} trailer`;
     iframe.allow = 'autoplay; fullscreen; picture-in-picture';
     iframe.setAttribute('allowfullscreen', '');
     frame.appendChild(iframe);
