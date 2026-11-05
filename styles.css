@@ -714,7 +714,7 @@ body {
   padding: 7rem 0 2.75rem;
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
-@media (min-width: 768px) { .page-head { padding: 11rem 0 6rem; } }
+@media (min-width: 768px) { .page-head { padding: 9rem 0 4rem; } }
 
 /* Page transition fade */
 .page-fade { animation: page-in .8s cubic-bezier(.2,.7,.2,1) both; }
